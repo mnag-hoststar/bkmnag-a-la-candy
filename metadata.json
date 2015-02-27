@@ -1,0 +1,148 @@
+{
+    "name":"a la Candy",
+    "thumbnail":"alacandy.png",
+    "screenshot":"alacandy.png",
+    "templateType":"standard",
+    "pageTypes": ["home"],
+    "tags": {
+    "en": ["transparent", "nature", "pattern", "color", "colour", "modern", "blog", "travel", "website", "food", "candy", "shop", "professional", "simple", "sans-serif", "serif"],
+    "es": ["transparente", "naturaleza", "ornamento", "color", "moderno", "blog", "viajes", "website", "comida", "dulce", "tienda", "profesional", "simple", "sans-serif", "serif"],
+    "br": ["transparente", "natureza", "ornamento", "cor", "moderno", "blog", "viagem", "website", "comida", "doce", "loja", "profissional", "simples", "sans-serif", "serif"]
+    },
+    "colorSwatches":
+    {
+        "Swatch 1": {
+            "color1":"#ffffff",
+            "color2":"#abadb7",
+            "color3":"#2d3650",
+            "color4":"#3e4455",
+            "color5":"#83868f",
+            "color6":"#3d455b",
+            "color7":"#000000"
+        },
+        "Swatch 2": {
+            "color1":"#ffffff",
+            "color2":"#ababab",
+            "color3":"#80344f",
+            "color4":"#69575e",
+            "color5":"#898989",
+            "color6":"#612338",
+            "color7":"#000000"
+        },
+        "Swatch 3": {
+            "color1":"#ffffff",
+            "color2":"#abadb7",
+            "color3":"#256b49",
+            "color4":"#576965",
+            "color5":"#898989",
+            "color6":"#274133",
+            "color7":"#000000"
+        },
+        "Swatch 4": {
+            "color1":"#ffffff",
+            "color2":"#c0a9a3",
+            "color3":"#74361a",
+            "color4":"#5d4034",
+            "color5":"#898989",
+            "color6":"#5c301a",
+            "color7":"#000000"
+        },
+        "Swatch 5": {
+            "color1":"#ffffff",
+            "color2":"#acb5bd",
+            "color3":"#3e6a98",
+            "color4":"#415368",
+            "color5":"#898989",
+            "color6":"#3c5773",
+            "color7":"#000000"
+        }
+    },
+    "fontSwatch": {
+       "title": "Montserrat, Noto Serif",
+        "font1": {
+            "font-family": "\"Montserrat\", Geneva, Tahoma, sans-serif",
+            "font-size": "32px",
+            "font-weight": "700",
+            "line-height": "38px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        },
+        "font2": {
+            "font-family": "\"Montserrat\", Geneva, Tahoma, sans-serif",
+            "font-size": "26px",
+            "font-weight": "700",
+            "line-height": "32px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        },
+        "font3": {
+            "font-family": "\"Montserrat\", Geneva, Tahoma, sans-serif",
+            "font-size": "22px",
+            "font-weight": "300",
+            "line-height": "30px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        },
+        "font4": {
+            "font-family": "\"Montserrat\", Geneva, Tahoma, sans-serif",
+            "font-size": "18px",
+            "font-weight": "400",
+            "line-height": "26px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        },
+        "font5": {
+            "font-family": "\"Noto Serif\", Georgia, serif",
+            "font-size": "15px",
+            "font-weight": "400",
+            "line-height": "24px",
+            "color": "@color-swatch5",
+            "letter-spacing": "inherit"
+        },
+        "font6": {
+            "font-family": "\"Montserrat\", Geneva, Tahoma, sans-serif",
+            "font-size": "14px",
+            "font-weight": "400",
+            "line-height": "30px",
+            "color": "fade(@color-swatch1, 60%)",
+            "letter-spacing": "inherit",
+            "color-hover": "@color-swatch1",
+            "background-color": "@color-swatch7",
+            "background-color-hover": "@color-swatch2"
+         },
+        "font7": {
+            "font-family": "\"Montserrat\", Geneva, Tahoma, sans-serif",
+            "font-size": "14px",
+            "font-weight": "300",
+            "line-height": "24px",
+            "color": "@color-swatch1",
+            "letter-spacing": "inherit",
+            "background-color": "@color-swatch2",
+            "background-color-hover": "darken(@color-swatch7,10%)"
+        },
+        "font8": {
+            "font-family": "\"Montserrat\", Geneva, Tahoma, sans-serif",
+            "font-size": "56px",
+            "font-weight": "700",
+            "line-height": "70px",
+            "color": "@color-swatch1",
+            "letter-spacing": "inherit"
+        },
+        "font9": {
+            "font-family": "\"Noto Serif\", Georgia, serif",
+            "font-size": "15px",
+            "font-weight": "400",
+            "line-height": "28px",
+            "color": "@color-swatch1",
+            "letter-spacing": "inherit"
+        },
+        "font10": {
+            "font-family": "\"Montserrat\", Geneva, Tahoma, sans-serif",
+            "font-size": "22px",
+            "font-weight": "400",
+            "line-height": "42px",
+            "color": "@color-swatch1",
+            "letter-spacing": "inherit"
+        }
+    }
+}

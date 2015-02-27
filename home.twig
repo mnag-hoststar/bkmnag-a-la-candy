@@ -1,0 +1,41 @@
+
+{% extends "layout.twig" %}
+
+{% block content %}
+
+
+<div class="featureimage">
+      {{widget('feature', 'featurehome', {"header": "THE TIME HAS COME", "strapline":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan varius est fermentum malesuada.Donec lacinia a nisl at suscipit. Lorem ipsum dolor sit amet, consectemalesuada. Donec amet solor.", "buttonText":"Lorem Ipsum","defaultBgImg": asset('images/feature-bg.jpg'), 'positionTopPercentage': '50','showBtn': true})|raw}}
+  <header class="bk-header">
+      <div class="header-container wrapper clearfix">
+          <div class="companyheader clearfix">
+              {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+              {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+          </div>
+      </div>
+  </header> 
+</div>
+
+<section class="feature-section">
+    <div class="navbar">
+        {{widget('extendednavigation', 'navigationheader', {"align":"center"})|raw}}
+    </div>
+</section>
+
+<div class="canvas">
+    <div class="page-wrap">
+        <div class="mainzone wrapper clearfix">
+            {{zone('main')|raw}}
+        </div>
+    </div>
+</div>
+          
+<footer class="bk-footer">
+    <div class="wrapper">
+        {{widget('profile', 'footerwidget2', { 'profileType':'address', 'address':'profile', 'refreshtime':'1800000'})|raw}}
+        {{widget('profile', 'footerwidget1', { 'profileType':'socialicons', 'strapline':'socialicons', 'refreshtime':'1800000'})|raw}}
+    </div>
+</footer>
+
+{% endblock %}
+
