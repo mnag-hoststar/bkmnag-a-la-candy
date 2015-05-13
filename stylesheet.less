@@ -3,7 +3,6 @@
    =============================== */
 
 @import "@{templateCommon}/basekit-bootstrap.less";
-@import url(http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic,700italic|Montserrat:400,700);
 
 /* 
 
@@ -193,10 +192,16 @@ header.bk-header {
     line-height: 40px;
 }
 
-/* hr.line {
-    height: 1px
-    background-color: @color-swatch7;
-} */
+.widget.line {
+    margin: 20px 0;
+    padding: 0;
+}
+
+hr.line {
+    height: 1px;
+    background-color: fade(@color-swatch7, 20%);
+    margin: 0;
+}
 
 /* ===============================
    2. DEFAULT PAGE
@@ -227,6 +232,10 @@ header.bk-header {
     margin-top: 40px;
 }
 
+.widget.content {
+    margin: 20px 0;
+}
+
 /* ===============================
    3. FEATURE
    =============================== */
@@ -253,7 +262,7 @@ header.bk-header {
                 -webkit-box-sizing: border-box;
                 -moz-box-sizing: border-box;
                 box-sizing: border-box;
-                background-color:rgba(0,0,0,0.1);
+                background-color: fade(@color-swatch7, 5%);
             .feature-bgimg .content {
                 padding: 12em 2em;
             @media @tablet {
@@ -299,6 +308,7 @@ header.bk-header {
 
 .widget.feature .feature-bgimg {
     height: 860px;
+    display: inherit;
 }
 
 .widget.feature .feature-bgimg .content button {
@@ -492,6 +502,22 @@ header.bk-header {
     @media @tablet {
             padding: 18px 20px;
         }
+}
+
+/* ===============================
+   MAP WIDGET
+   =============================== */
+   
+.widget.map {
+    margin: 20px 0;
+}
+
+/* ===============================
+   YOUTUBE WIDGET
+   =============================== */
+   
+.widget.youtube {
+    margin: 20px 0;
 }
 
 /* ===============================
@@ -695,7 +721,7 @@ header.bk-header {
 
 .widget.contactform fieldset label {
     font-family: @font-swatch4-font-family;
-    font-size: @font-swatch4-font-size;
+    font-size: @font-swatch5-font-size;
     font-weight: @font-swatch4-font-weight;
     line-height: @font-swatch4-line-height;
     color: @font-swatch4-color;
@@ -760,10 +786,6 @@ header.bk-header {
 }
 
 .widget.contactform form fieldset button.btn {
-    padding: 10px 25px;
-    border-top: 1px solid @color-swatch3;
-    text-decoration: none;
-    background-color: @color-swatch3;
     float: left;
 }
 
@@ -780,8 +802,8 @@ button.btn, .widget.ecomcheckout .checkout-order-button,
     }
 }
 
-.widget.contactform form fieldset button.btn, .widget.profile form button, .signupform fieldset button, 
-.blogsearch form button, .blog-search-submit-button, .ecom-productslist-products button.btn, .widget.ecomproduct .ecom-product .btn {
+.widget.contactform form fieldset button.btn, 
+.ecom-productslist-products button.btn, .widget.ecomproduct .ecom-product .btn {
     @media @mobile {
         width: 100%;
     }
@@ -793,28 +815,20 @@ button.btn, .widget.ecomcheckout .checkout-order-button,
 
 .signupform fieldset button {
     padding: 9px 15px 8px;
-}
-
-.signupform fieldset input {
-    width: 70%;
-    border: 0;
-    background-color: fade(@color-swatch2, 10%);
-    text-indent: 12px;
-    @media @tablet {
-        width: 90%;
-    }
+    width: 33%;
     @media @mobile {
-        margin-bottom: 20px;
         width: 100%;
     }
 }
 
-.widget.feature button {
-    background: @color-swatch1;
-    height: 45px;
-    color: black;
-    &:hover {
-       background: lighten(@color-swatch2,10%);
+.signupform fieldset input {
+    width: 65%;
+    border: 0;
+    background-color: fade(@color-swatch2, 10%);
+    text-indent: 12px;
+    @media @mobile {
+        margin-bottom: 20px;
+        width: 100%;
     }
 }
 
@@ -827,18 +841,19 @@ button.btn, .widget.ecomcheckout .checkout-order-button,
     background-color: fade(@color-swatch3, 80%);
     padding: 10px 25px 8px;
     //border-top: 1px solid @color-swatch3;
+    width: 33%;
     &:hover {
         color: @color-swatch1;
         background-color: @color-swatch3;
+    }
+    @media @mobile {
+        width: 100%;
     }
 }
 
 .widget.profile form fieldset input {
     width: 65%;
     background-color: fade(@color-swatch2, 10%);
-    @media @tablet {
-        width: 90%;
-    }
     @media @mobile {
         margin-bottom: 20px;
         width: 100%;
@@ -857,7 +872,7 @@ button.btn, .widget.ecomcheckout .checkout-order-button,
     background-color: fade(@color-swatch3, 80%);
     padding: 9px 25px;
     height: 48px;
-    width: 20%;
+    width: 30%;
     //border-radius: 3px;
     //border-top: 1px solid @color-swatch3;
     border: 0;
@@ -865,6 +880,20 @@ button.btn, .widget.ecomcheckout .checkout-order-button,
     &:hover {
         color: @color-swatch1;
         background-color: @color-swatch3;
+    }
+    @media @tablet {
+        width: 38%;
+    }
+    @media @mobile {
+        width: 100%;
+    }
+}
+
+.blogsearch label {
+    display: none;
+    @media @mobile {
+        display: inherit;
+        margin-bottom: 10px;
     }
 }
 
@@ -874,6 +903,9 @@ button.btn, .widget.ecomcheckout .checkout-order-button,
     height: 49px;
     background-color: fade(@color-swatch2, 10%);
     -webkit-appearance: none;
+    @media @tablet {
+        width: 60%;
+    }
     @media @mobile {
         margin-bottom: 20px;
         width: 100%;
@@ -1593,6 +1625,7 @@ select {
 blockquote {
     background-color: fade(@color-swatch2, 10%);
     font-style: italic;
+    margin: 10px 0;
 }
 
 blockquote:before {
