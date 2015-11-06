@@ -104,7 +104,7 @@
             "font-size": "14px",
             "font-weight": "400",
             "line-height": "30px",
-            "color": "fade(@color-swatch1, 60%)",
+            "color": "@color-swatch1",
             "letter-spacing": "inherit",
             "color-hover": "@color-swatch1",
             "background-color": "@color-swatch7",
@@ -118,7 +118,7 @@
             "color": "@color-swatch1",
             "letter-spacing": "inherit",
             "background-color": "@color-swatch2",
-            "background-color-hover": "darken(@color-swatch7,10%)"
+            "background-color-hover": "@color-swatch7"
         },
         "font8": {
             "font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
