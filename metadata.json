@@ -1,7 +1,7 @@
 {
     "name":"a la Candy",
-    "thumbnail":"alacandy.png",
-    "screenshot":"alacandy.png",
+    "thumbnail":"thumbnail.png",
+    "screenshot":"alacandy-screenshot.jpg",
     "templateType":"standard",
     "pageTypes": ["home"],
     "tags": {
