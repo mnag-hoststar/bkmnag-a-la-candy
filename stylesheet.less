@@ -369,7 +369,6 @@ hr.line {
     bottom: 0;
     width: 100%;
     background-color: fade(@color-swatch6, 40%);
-    z-index: 9999;
     @media @tablet {
         background-color: transparent;
         bottom: inherit;
@@ -708,21 +707,8 @@ hr.line {
    =============================== */
 
 
-.widget.contactform form {
-    display: block;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    text-align: center;
-    margin-bottom: 20px;
-}
 
-.widget.contactform fieldset {
-    border: none;
-    padding: 0;
-}
-
-.widget.contactform fieldset label {
+.contactform label, .advancedcontactform label {
     font-family: @font-swatch4-font-family;
     font-size: @font-swatch5-font-size;
     font-weight: @font-swatch4-font-weight;
@@ -731,46 +717,28 @@ hr.line {
     letter-spacing: @font-swatch4-letter-spacing;
 }
 
-.widget.contactform form fieldset input {
+.contactform input, .contactform select, .contactform textarea, 
+.advancedcontactform input, .advancedcontactform select, .advancedcontactform textarea {
     width: 100%;
-    padding: 5px 0px;
+    padding: 10px;
     font-family: @font-swatch5-font-family;
     font-size: @font-swatch5-font-size;
     color: @font-swatch5-color;
-    text-indent: 12px;
-    margin-top: 6px;
-    margin-bottom: 20px;
-    background-color: fade(@color-swatch2, 10%);
-    /* -webkit-box-shadow: 0px 1px rgba(255, 255, 255, 0.5); 
-    -moz-box-shadow: 0px 1px rgba(255, 255, 255, 0.5); 
-    box-shadow: 0px 1px rgba(255, 255, 255, 0.5); 
-    -webkit-border-radius: 3px; 
-    -moz-border-radius: 3px; 
-    border-radius: 3px; */
-}
-
-.widget.contactform form fieldset textarea {
-    width: 100%;
-    font-family: @font-swatch5-font-family;
-    font-size: @font-swatch5-font-size;
-    color: @font-swatch5-color;
-    text-indent: 12px;
-    padding-top: 14px;
-    margin-top: 6px;
-    margin-bottom: 20px;
-    resize: none;
-    padding: 10px 0px 100px 0px;
     background-color: fade(@color-swatch2, 10%);
     border: 0;
-    text-indent: 12px;
+    height: 40px;
+    &:focus {
+        outline: none;
+    }
 }
 
-.widget.contactform fieldset input:focus, .widget.contactform fieldset textarea:focus {
-    outline: none;
+.contactform textarea, .advancedcontactform textarea {
+    resize: none;
+    height: 100px;
 }
 
-.contactform label {
-    width: auto;
+.form-group {
+    margin-bottom: 1em;
 }
 
 /* PLACEHOLDER CSS */
@@ -788,13 +756,12 @@ hr.line {
     color:    @color-swatch5;
 }
 
-.widget.contactform form fieldset button.btn {
-    float: left;
-}
+
 
 button.btn, .widget.ecomcheckout .checkout-order-button, 
 .widget.ecombasket .ecombasket-pull, 
-.widget.contactform form fieldset button.btn {
+.contactform button, .contactform button.btn, 
+.advancedcontactform button, .advancedcontactform button.btn {
     color: darken(@font-swatch7-color, 10%);
     background-color: fade(@color-swatch3, 80%);
     padding: 10px 25px;
@@ -803,10 +770,6 @@ button.btn, .widget.ecomcheckout .checkout-order-button,
     &:hover {
        background-color: @color-swatch3;
     }
-}
-
-.widget.contactform form fieldset button.btn, 
-.ecom-productslist-products button.btn, .widget.ecomproduct .ecom-product .btn {
     @media @mobile {
         width: 100%;
     }
@@ -817,7 +780,7 @@ button.btn, .widget.ecomcheckout .checkout-order-button,
    =============================== */
 
 .signupform fieldset button {
-    padding: 9px 15px 8px;
+    padding: 10px 25px;
     width: 33%;
     @media @mobile {
         width: 100%;
