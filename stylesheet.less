@@ -5,23 +5,41 @@
 @import "@{templateCommon}/basekit-bootstrap.less";
 
 /* 
-
 Table of Contents -
 
-  1. Default
-  2. Default page
-  3. Custom CSS
-  4. Menu sections navigation
-  5. Header
-  6. Menu
-  7. Footer
-  8. SOCIAL BAR WIDGET / PROFILE DATA
-  9. IPHONE WIDTH
-  10. Print overrides.
+    1. DEFAULT
+    2. CUSTOM CSS
+    3. DEFAULT PAGE
+    4. LANGUAGE SELECTOR
+    5. HEADER
+    6. FEATURE
+    7. MENU SECTIONS NAVIGATION
+    8. EXTENDED NAVIGATION
+    9. MAP WIDGET
+    10. YOUTUBE WIDGET
+    11. SLIDESHOW WIDGET
+    12. BUTTON WIDGET
+    13. CONTACT FORM WIDGET
+    14. SIGN UP FORM
+    15. WIDGET PROFILE FORM
+    16. BLOG SEARCH
+    17. PAYPAL BUTTON
+    18. TWITTER BUTTON
+    19. DROPBOX BUTTON
+    20. FOOTER
+    21. SOCIAL BAR WIDGET / PROFILE DATA
+    22. BLOG
+    23. GALLERY
+    24. E-COMMERCE
+    25. MENU
+    26. BLOCKQUOTES
+    27. IPAD WIDTH
+    28. IPHONE WIDTH
+    29. PRINT OVERRIDE
 */
 
 /* ===============================
-   1. Default
+   1. DEFAULT
    =============================== */
 
 body {
@@ -90,45 +108,7 @@ h5 {
 }
 
 /* ===============================
-   2. HEADER
-   =============================== */
-
-.companyheader {
-    display: block;
-    padding: 0;
-    margin: 6px 0 0;
-    margin: 0px auto;
-    display: table;
-}
-
-/* COMPANY NAME */
-
-.widget.companyname {
-    display: block;
-    margin: 0px auto;
-    display: table;
-}
-
-.widget.companyname a {
-    letter-spacing: 0.1em;
-    //text-shadow: 1px 1px 1px #B3B3B3;
-}
-
-.widget.companyname a:hover {
-    cursor: pointer;
-    text-decoration: none;
-}
-
-/* LOGO */
-
-.widget.logo {
-    display: block;
-    width: 100%;
-    margin-right: 10px;
-}
-
-/* ===============================
-   3. CUSTOM CSS
+   2. CUSTOM CSS
    =============================== */
 
 .contacttextwidget {
@@ -204,7 +184,7 @@ hr.line {
 }
 
 /* ===============================
-   2. DEFAULT PAGE
+   3. DEFAULT PAGE
    =============================== */
 
 .bk-pt-default .featureimage {
@@ -237,10 +217,278 @@ hr.line {
 }
 
 /* ===============================
-   3. FEATURE
+   4. LANGUAGE SELECTOR
+   =============================== */
+
+
+/* GENERAL STYLES */
+
+@language-padding: 5px;
+
+.language-selector.language-selector--dropdown,
+.language-selector.language-selector--horizontal {
+    box-sizing: content-box;
+}
+
+/* LANGAUGE SELECTOR LIGHT */
+
+.language-selector.language-selector--light {
+    background-color: @color-swatch1;
+}
+
+/* LANGUAGE SELECTOR DARK */
+
+.language-selector.language-selector--dark {
+    background-color: @color-swatch3;
+}
+
+/* GENERAL STYLES INSIDE THE LANGUAGE SELECTOR */
+
+.language-selector {
+    .language-selector__inner {
+        box-sizing: content-box;
+        margin: 0 auto;
+        padding: @language-padding 0;
+        width: 90%;
+        margin: 0 auto;
+        max-width: 1200px;
+        
+        @media @tablet {
+            width: 100%;
+        }
+    }
+    
+    .language-selector__list {
+        padding: @language-padding 0;
+        
+        @media @tablet {
+            padding: @language-padding @language-padding*2;
+        }
+    }
+    
+    .language-selector__link {
+        box-sizing: border-box;
+        padding: @language-padding @language-padding*2;
+        min-height: @font-swatch5-line-height;
+        border: none;
+    }
+
+    .language-selector__inner,
+    .language-selector__list,
+    .language-selector__item,
+    .language-selector__link,
+    .language-selector__name,
+    .language-selector__localised-name {
+    	text-transform: uppercase;
+        font-family: @font-swatch5-font-family;
+        font-size: @font-swatch5-font-size;
+        font-weight: @font-swatch5-font-weight;
+        line-height: @font-swatch5-line-height;
+        letter-spacing: @font-swatch5-letter-spacing;
+    }
+}
+
+/* LANGUAGE SELECTOR DROPDOWN */
+
+.language-selector.language-selector--dropdown {
+    height: auto;
+    text-align: left;
+    
+    .language-selector__inner {
+        width: 90%;
+        margin: 0 auto;
+        max-width: 1200px;
+        height: @font-swatch5-line-height+@language-padding*4;
+        
+        @media @tablet {
+            width: 100%;
+        }
+    }
+
+    .language-selector__list {
+        box-sizing: border-box;
+        min-width: auto;
+        margin: 0;
+        padding: @language-padding*2 0;
+        
+        @media @tablet {
+            position: relative;
+            padding: @language-padding @language-padding*2;
+        }
+    }
+    
+    &.language-selector--flag .language-selector__list {
+        @media @tablet {
+            position: absolute;
+            padding: @language-padding*2 @language-padding*2;
+        }
+    }
+
+    .language-selector__item {
+        &--current {
+            &:after {
+                display: block;
+                content: "";
+                position: absolute;
+                right: @language-padding*2;
+                top: 43%;
+                border: @language-padding solid transparent;
+            }
+        }
+    }
+    &.language-selector--light {
+        .language-selector__item {
+            &--current {
+                &:after {
+                    border-top-color: @color-swatch4;
+                }
+            }
+        }
+    }
+    &.language-selector--dark {
+        .language-selector__item {
+            &--current {
+                &:after {
+                    border-top-color: @color-swatch1;
+                }
+            }
+        }
+    }
+    
+    .language-selector__link {
+        padding-right: @language-padding*6;
+        
+    }
+    
+    .language-selector__icon {
+        line-height: inherit;
+        float: left;
+    }
+
+    .language-selector__name,
+    .language-selector__localised-name {
+        @media only screen and (max-width: 300px) {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 150px;
+            display: block;
+        }
+    }
+}
+
+/* LANGUAGE SELECTOR SINGLE ITEM */
+
+.language-selector__item {
+    .language-selector.language-selector--light &,
+    .language-selector.language-selector--dark & {
+        border: none;
+        background-color: transparent;
+        
+        .language-selector__link {
+            background-color: transparent;
+        }
+    }
+    
+    .language-selector--dropdown.language-selector--light & {
+        background-color: @color-swatch1;
+    }
+    
+    .language-selector.language-selector--light &,
+    .language-selector--dropdown.language-selector--light & {
+        .language-selector__link:hover {
+            background-color: fade(@color-swatch3, 20%);
+        }
+        
+        &.language-selector__item--current {
+            .language-selector__link,
+            .language-selector__link:hover {
+                background-color: fade(@color-swatch3, 20%);
+            }
+        }
+    }
+    
+    .language-selector.language-selector--dark &,
+    .language-selector--dropdown.language-selector--dark & {
+        background-color: @color-swatch3;
+        
+        .language-selector__link:hover {
+            background-color: fade(darken(@color-swatch3, 10%), 80%);
+        }
+        
+        &.language-selector__item--current {
+            .language-selector__link,
+            .language-selector__link:hover {
+                background-color: fade(darken(@color-swatch3, 10%), 80%);
+            }
+        }
+    }
+}
+
+/* LANGUAGE SELECTOR TEXT */
+.language-selector__link {
+    .language-selector.language-selector--horizontal & {
+        text-align: right;
+    }
+    .language-selector.language-selector--dropdown & {
+        text-align: left;
+    }
+}
+
+.language-selector__name,
+.language-selector__localised-name {
+    .language-selector--dropdown.language-selector--light & {
+        font-size: @color-swatch4;
+    }
+    .language-selector--dropdown.language-selector--dark & {
+        font-size: @color-swatch1;
+    }
+}
+
+/* ===============================
+   5. HEADER
+   =============================== */
+
+.companyheader {
+    display: block;
+    padding: 0;
+    margin: 6px 0 0;
+    margin: 0px auto;
+    display: table;
+}
+
+/* COMPANY NAME */
+
+.widget.companyname {
+    display: block;
+    margin: 0px auto;
+    display: table;
+}
+
+.widget.companyname a {
+    letter-spacing: 0.1em;
+    //text-shadow: 1px 1px 1px #B3B3B3;
+}
+
+.widget.companyname a:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* LOGO */
+
+.widget.logo {
+    display: block;
+    width: 100%;
+    margin-right: 10px;
+}
+
+/* ===============================
+   6. FEATURE
    =============================== */
 
 .featureimage {
+    position: relative;
     min-height: 250px;
     background-color: lighten(@color-swatch3,10%);
     width: 100%;
@@ -372,7 +620,7 @@ hr.line {
     @media @tablet {
         background-color: transparent;
         bottom: inherit;
-        top: -60px;
+        top: -50px;
         .left {
             float: left;
             width: 100%;
@@ -391,7 +639,7 @@ hr.line {
 }
 
 /* ===============================
-   4. MENU SECTIONS NAVIGATION
+   7. MENU SECTIONS NAVIGATION
    =============================== */
 
 .bk-pt-default .menu-container {
@@ -399,12 +647,13 @@ hr.line {
 }
 
 /* ===============================
-   EXTENDED NAVIGATION
+   8. EXTENDED NAVIGATION
    =============================== */
 
 .tabletmob-nav {
     display: none;
     background-color: darken(@color-swatch4,10%);
+    
     @media @tablet {
         display: inline-block;
         width: 100%;
@@ -423,7 +672,7 @@ hr.line {
         min-height: 50px;
         padding: 0px 13%;
         @media @tablet {
-            background-color: transparent;
+            background-color: fade(@color-swatch6, 40%);
         }
     }
 }
@@ -505,7 +754,7 @@ hr.line {
 }
 
 /* ===============================
-   MAP WIDGET
+   9. MAP WIDGET
    =============================== */
    
 .widget.map {
@@ -513,7 +762,7 @@ hr.line {
 }
 
 /* ===============================
-   YOUTUBE WIDGET
+   10. YOUTUBE WIDGET
    =============================== */
    
 .widget.youtube {
@@ -521,7 +770,7 @@ hr.line {
 }
 
 /* ===============================
-   SLIDESHOW WIDGET
+   11. SLIDESHOW WIDGET
    =============================== */
 
 .widget.responsiveslideshow {
@@ -671,7 +920,7 @@ hr.line {
 }
 
 /* ===============================
-   BUTTON WIDGET
+   12. BUTTON WIDGET
    =============================== */
 
 .widget.button button {
@@ -703,7 +952,7 @@ hr.line {
 }
 
 /* ===============================
-   CONTACT FORM WIDGET
+   13. CONTACT FORM WIDGET
    =============================== */
 
 
@@ -776,7 +1025,7 @@ button.btn, .widget.ecomcheckout .checkout-order-button,
 }
 
 /* ===============================
-   SIGN UP FORM
+   14. SIGN UP FORM
    =============================== */
 
 .signupform fieldset button {
@@ -799,7 +1048,7 @@ button.btn, .widget.ecomcheckout .checkout-order-button,
 }
 
 /* ===============================
-   WIDGET PROFILE FORM
+   15. WIDGET PROFILE FORM
    =============================== */
 
 .widget.profile form button {
@@ -827,7 +1076,7 @@ button.btn, .widget.ecomcheckout .checkout-order-button,
 }
 
 /* ===============================
-   BLOG SEARCH
+   16. BLOG SEARCH
    =============================== */
 
 .blogsearch form button, .blog-search-submit-button {
@@ -883,7 +1132,7 @@ button.btn, .widget.ecomcheckout .checkout-order-button,
 }
 
 /* ===============================
-   PAYPAL BUTTON
+   17. PAYPAL BUTTON
    =============================== */
 
 .widget.paypalbuynow .widget.button.paypal, .widget.dropbox button {
@@ -898,7 +1147,7 @@ button.btn, .widget.ecomcheckout .checkout-order-button,
 }
 
 /* ===============================
-   TWITTER BUTTON
+   18. TWITTER BUTTON
    =============================== */
 
 .widget.tweet a {
@@ -913,7 +1162,7 @@ button.btn, .widget.ecomcheckout .checkout-order-button,
 }
 
 /* ===============================
-   DROPBOX BUTTON
+   19. DROPBOX BUTTON
    =============================== */
 
 
@@ -963,8 +1212,8 @@ input {
 
 
 /* ===============================
-   7. FOOTER
-  =============================== */
+   20. FOOTER
+   =============================== */
 
 footer.bk-footer {
     min-height: 100px;
@@ -987,7 +1236,7 @@ footer.bk-footer {
 }
 
 /* ===============================
-   8. SOCIAL BAR WIDGET / PROFILE DATA
+   21. SOCIAL BAR WIDGET / PROFILE DATA
    =============================== */
 
 .widget.socialicons span a {
@@ -1025,7 +1274,7 @@ footer .widget.profile .bk-profile-socialicons span a:hover {
 }
 
 /* ===============================
-  BLOG
+   22. BLOG
    =============================== */
 
 .widget {
@@ -1090,9 +1339,10 @@ footer .widget.profile .bk-profile-socialicons span a:hover {
            }
        }
 
-// -----------------------------
-// Gallery
-// -----------------------------
+
+/* ===============================
+   23. GALLERY
+   =============================== */
 
 .widget.gallery {
     margin: 20px 0 20px -0.5%;
@@ -1162,7 +1412,7 @@ footer .widget.profile .bk-profile-socialicons span a:hover {
 }
 
 /* ===============================
-   Ecom
+   24. E-COMMERCE
    =============================== */
 
 .widget.ecomcheckout .checkout-order-button {
@@ -1531,7 +1781,7 @@ select {
 }
 
 /* ===============================
-   MENU
+   25. MENU
    =============================== */
 .widget.menu .wrapper {
     margin: 0;
@@ -1585,7 +1835,7 @@ select {
 }
 
 /* ===============================
-   BLOCKQUOTES
+   26. BLOCKQUOTES
    =============================== */
 
 blockquote {
@@ -1601,7 +1851,7 @@ blockquote:before {
 }
 
 /* ===============================
-   9. IPAD WIDTH
+   27. IPAD WIDTH
    =============================== */
 
 @media only screen and (max-width: 768px) {
@@ -1620,7 +1870,14 @@ blockquote:before {
       display:none;
     }
 
-    .widget.menu .main .menu-header h1:before, .widget.menu .main .menu-subsection-header h1:before, .widget.menu .main .menu-header h2:before, .widget.menu .main .menu-subsection-header h2:before, .widget.menu .main .menu-header h1:after, .widget.menu .main .menu-subsection-header h1:after, .widget.menu .main .menu-header h2:after, .widget.menu .main .menu-subsection-header h2:after {
+    .widget.menu .main .menu-header h1:before,
+    .widget.menu .main .menu-subsection-header h1:before,
+    .widget.menu .main .menu-header h2:before,
+    .widget.menu .main .menu-subsection-header h2:before,
+    .widget.menu .main .menu-header h1:after,
+    .widget.menu .main .menu-subsection-header h1:after,
+    .widget.menu .main .menu-header h2:after,
+    .widget.menu .main .menu-subsection-header h2:after {
         display:none;
     }
 
@@ -1806,7 +2063,7 @@ blockquote:before {
 }
 
 /* ===============================
-   9. IPHONE WIDTH
+   28. IPHONE WIDTH
    =============================== */
 
 @media only screen and (max-width: 480px) {
@@ -1866,7 +2123,10 @@ blockquote:before {
         padding-top:10px;
     }
 
-    .widget.menu .main .menu-header h1, .widget.menu .main .menu-subsection-header h1, .widget.menu .main .menu-header h2, .widget.menu .main .menu-subsection-header h2 {
+    .widget.menu .main .menu-header h1,
+    .widget.menu .main .menu-subsection-header h1,
+    .widget.menu .main .menu-header h2,
+    .widget.menu .main .menu-subsection-header h2 {
         padding:0;
     }
 
@@ -1917,7 +2177,7 @@ blockquote:before {
 }
 
 /* ===============================
-   9. Print override
+   29. PRINT OVERRIDE
    =============================== */
 .print-mixin {
     .headerrow,
@@ -1949,4 +2209,3 @@ blockquote:before {
 .bk-print {
     .print-mixin;
 }
-
