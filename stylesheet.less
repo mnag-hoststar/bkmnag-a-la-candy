@@ -81,6 +81,14 @@ h5 {
     letter-spacing: @font-swatch4-letter-spacing;
 }
 
+p {
+    font-family: @font-swatch5-font-family;
+    font-size: @font-swatch5-font-size;
+    font-weight: @font-swatch5-font-weight;
+    line-height: @font-swatch5-line-height;
+    letter-spacing: @font-swatch5-letter-spacing;
+}
+
 .widget.feature .feature-bgimg .content {
     display: block;
     padding-top: 12%;
@@ -223,7 +231,7 @@ hr.line {
 
 /* GENERAL STYLES */
 
-@language-padding: 5px;
+@language-padding: 0.5em;
 
 .language-selector.language-selector--dropdown,
 .language-selector.language-selector--horizontal {
@@ -283,8 +291,14 @@ hr.line {
         font-family: @font-swatch5-font-family;
         font-size: @font-swatch5-font-size;
         font-weight: @font-swatch5-font-weight;
-        line-height: @font-swatch5-line-height;
+        line-height: unit(@font-swatch5-line-height*0.1, em);
         letter-spacing: @font-swatch5-letter-spacing;
+    }
+    
+    &.language-selector--flag-text .language-selector__icon {
+        line-height: inherit;
+        float: left;
+        margin-right: @language-padding;
     }
 }
 
@@ -298,7 +312,7 @@ hr.line {
         width: 90%;
         margin: 0 auto;
         max-width: 1200px;
-        height: @font-swatch5-line-height+@language-padding*4;
+        height: unit(@font-swatch5-line-height*0.1, em) + @language-padding*4;
         
         @media @tablet {
             width: 100%;
@@ -310,6 +324,11 @@ hr.line {
         min-width: auto;
         margin: 0;
         padding: @language-padding*2 0;
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
         
         @media @tablet {
             position: relative;
@@ -331,7 +350,8 @@ hr.line {
                 content: "";
                 position: absolute;
                 right: @language-padding*2;
-                top: 43%;
+                top: 50%;
+                margin-top: -(@language-padding/2);
                 border: @language-padding solid transparent;
             }
         }
@@ -359,21 +379,13 @@ hr.line {
         padding-right: @language-padding*6;
         
     }
-    
-    .language-selector__icon {
-        line-height: inherit;
-        float: left;
-    }
 
     .language-selector__name,
     .language-selector__localised-name {
-        @media only screen and (max-width: 300px) {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 150px;
-            display: block;
-        }
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
     }
 }
 
