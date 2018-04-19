@@ -293,6 +293,10 @@ hr.line {
         font-weight: @font-swatch6-font-weight;
         line-height: @font-swatch6-line-height;
         letter-spacing: @font-swatch6-letter-spacing;
+		-webkit-font-smoothing: auto;
+		-moz-osx-font-smoothing: auto;
+		font-smooth: auto;
+		text-rendering: auto;
     }
     
     &.language-selector--flag-text .language-selector__name {
@@ -481,12 +485,6 @@ hr.line {
 
 .language-selector__name,
 .language-selector__localised-name {
-	.language-selector & {
-		-webkit-font-smoothing: auto;
-		-moz-osx-font-smoothing: auto;
-		font-smooth: auto;
-		text-rendering: auto;
-	}
 	
     .language-selector--dropdown.language-selector--light & {
         font-size: @color-swatch4;
