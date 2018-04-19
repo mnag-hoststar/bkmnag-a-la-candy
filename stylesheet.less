@@ -481,6 +481,13 @@ hr.line {
 
 .language-selector__name,
 .language-selector__localised-name {
+	.language-selector & {
+		-webkit-font-smoothing: auto;
+		-moz-osx-font-smoothing: auto;
+		font-smooth: auto;
+		text-rendering: auto;
+	}
+	
     .language-selector--dropdown.language-selector--light & {
         font-size: @color-swatch4;
     }
