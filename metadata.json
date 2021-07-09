@@ -3,6 +3,7 @@
     "thumbnail":"thumbnail.png",
     "screenshot":"alacandy-screenshot.jpg",
     "templateType":"standard",
+    "versionTenCompatible": 1,
     "pageTypes": ["home"],
     "tags": {
     "en": ["transparent", "nature", "pattern", "color", "colour", "modern", "blog", "travel", "website", "food", "candy", "shop", "professional", "simple", "sans-serif", "serif"],
@@ -18,7 +19,7 @@
             "color4":"#3e4455",
             "color5":"#83868f",
             "color6":"#3d455b",
-            "color7":"#000000"
+            "color7":"#3e4455"
         },
         "Swatch 2": {
             "color1":"#ffffff",

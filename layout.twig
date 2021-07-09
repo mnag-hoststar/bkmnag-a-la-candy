@@ -1,16 +1,6 @@
 <!doctype html>
-<!--[if lt IE 7]>
-	<html class="no-js ie6 oldie" lang="en">
-<![endif]-->
-<!--[if IE 7]>
-	<html class="no-js ie7 oldie" lang="en">
-<![endif]-->
-<!--[if IE 8]>
-	<html class="no-js ie8 oldie" lang="en">
-<![endif]-->
-<!--[if gt IE 8]><!-->
 <html class="no-js" lang="{{ page.seoLang }}">
-<!--<![endif]-->
+
 <head>
 	<meta charset="utf-8" />
 	<title>{{ page.title }}</title>
@@ -28,7 +18,7 @@
 
 	{% include basekit.headScript %}
 </head>
-<body class="{{ page.backgroundClass }}">
+<body class="{{ page.backgroundClass }}" {{ isV10sSite ? 'id="migrated"' : '' }}>
 
 	{% block content %}
 	{% endblock %}
@@ -38,41 +28,13 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="{{ asset('libs/jquery-1.10.2.min.js')}}"><\/script>')</script>
 
-	<!--<script type="text/javascript">
-
-	$(".featureimage").css("height", $(window).height());
-	$(window).bind("resize",function() {
-	    $(".featureimage").css("height", $(window).height());
-	});
-
-	</script>
-
-	<script type="text/javascript">
- 	$(function() {
- 	  $('a[href*=#]:not([href=#])').click(function() {
- 	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
- 	      var target = $(this.hash);
- 	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
- 	      if (target.length) {
- 	        $('html,body').animate({
- 	          scrollTop: target.offset().top
- 	        }, 1000);
- 	        return false;
- 	    }
-	  }
-	 });
-	});
-</script>!-->
-
-
-
 	<script type="text/javascript">
 	! function () {
 	    function supportsSVG() {
 	        return !!document.createElementNS && !! document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect
 	    }
 	    if (supportsSVG()) document.documentElement.className += ' svg'
-	}()
+	}();
 	</script>
 </body>
 </html>
