@@ -17,8 +17,12 @@
         margin-bottom: 0;
     }
 
-    &.edit .widget .extendednavigation a.pull {
-        display: none;
+    &.edit,
+    &.row-selection-mode,
+    &.is-move-mode {
+        .widget .extendednavigation a.pull {
+            display: none;
+        }
     }
 
     .mainzone,
@@ -53,6 +57,10 @@
 
     [data-rowtype="gallery-4a"] .widget.gallery .inner .image-data .title {
         margin: 0 0 15px;
+    }
+
+    .row--layout-hero-5a .signupform fieldset input {
+        width: auto;
     }
 }
 
