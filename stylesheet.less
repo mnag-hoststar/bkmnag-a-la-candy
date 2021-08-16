@@ -39,6 +39,16 @@ Table of Contents -
 */
 
 /* ===============================
+   Mixins
+   =============================== */
+
+.appearance(@appearance: none) {
+    -webkit-appearance: @appearance;
+    -moz-appearance: @appearance;
+    appearance: @appearance;
+}
+
+/* ===============================
    1. DEFAULT
    =============================== */
 
@@ -99,6 +109,8 @@ h1, h2, h3, h4, h5, h6,
 .contactform label, .advancedcontactform label,
 a,
 [data-name="content"] a:not(.contentgroup__link) {
+    word-break: break-word;
+
     .style--light & {
         color: @contrast--light;
     }
@@ -1148,7 +1160,7 @@ a.contentgroup__link {
    13. CONTACT FORM WIDGET
    =============================== */
 
-.contactform label, .advancedcontactform label {
+label {
     font-family: @font-swatch4-font-family;
     font-size: @font-swatch5-font-size;
     font-weight: @font-swatch4-font-weight;
@@ -1157,28 +1169,21 @@ a.contentgroup__link {
     letter-spacing: @font-swatch4-letter-spacing;
 }
 
-.contactform input, .contactform select, .contactform textarea, 
-.advancedcontactform input, .advancedcontactform select, .advancedcontactform textarea {
-    width: 100%;
-    padding: 10px;
-    font-family: @font-swatch5-font-family;
-    font-size: @font-swatch5-font-size;
+input, select, textarea {
+    padding: 0 10px;
     border: 0;
     height: 40px;
+    width: 100%;
+    background-color: fade(@color-swatch2, 10%);
+    border: 0;
+    font-family: @font-swatch5-font-family;
+    font-size: @font-swatch5-font-size;
+    color: @font-swatch5-color;
+
 
     &:focus {
         outline: none;
     }
-}
-
-input,
-.signupform fieldset input,
-.contactform input, .contactform select, .contactform textarea, 
-.advancedcontactform input, .advancedcontactform select, .advancedcontactform textarea,
-.blog-search-input {
-    background-color: fade(@color-swatch2, 10%);
-    border: 0;
-    color: @font-swatch5-color;
 
     .style--light & {
         background-color: fade(@contrast--light, 10%);
@@ -1196,9 +1201,31 @@ input,
     }
 }
 
-.contactform textarea, .advancedcontactform textarea {
+textarea {
     resize: none;
     height: 100px;
+}
+
+.select-wrap {
+    max-width: 50%;
+
+    @media @mobile {
+        max-width: 100%;
+    }
+}
+
+select {
+	padding-right: 2.2em;
+    width: 100%;
+    .appearance(none) !important;
+	background-image: url("data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI0IDI0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNCAyNCI+Cgk8cG9seWxpbmUgc3Ryb2tlPSIjNzY3ODgwIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjMiIHBvaW50cz0iMjAuMSw4LjYgMTIsMTYuNyAzLjksOC42IiAvPgo8L3N2Zz4=");
+    background-repeat: no-repeat;
+    background-position: right 0.5em center;
+    background-size: 1.2em;
+
+	&::-ms-expand {
+		display: none;
+	}
 }
 
 .form-group {
@@ -1219,8 +1246,6 @@ input,
 :-ms-input-placeholder { /* Internet Explorer 10+ */
     color:    @color-swatch5;
 }
-
-
 
 button.btn, .widget.ecomcheckout .checkout-order-button, 
 .widget.ecombasket .ecombasket-pull, 
@@ -1648,38 +1673,6 @@ footer .widget.profile .bk-profile-socialicons span a:hover {
     border-bottom: 1px solid @color-swatch5;
 }
 
-.widget.ecomproduct .ecom-product .ecom-product-info .ecom-product-variation select {
-    outline: none !important;
-    -moz-outline-style: none;
-    position: relative;
-    background: transparent;
-    padding: 10px 23px 10px 10px;
-    background-color: fade(@color-swatch2, 10%);
-    border: 0;
-}
-
-.widget.ecomcheckout .delivery select {
-    outline: none !important;
-    -moz-outline-style: none;
-    position: relative;
-    background: transparent;
-    padding: 10px 23px 10px 10px;
-    background-color: fade(@color-swatch2, 10%);
-    border: 0;
-}
-
-select {
-    outline: none !important;
-    -moz-outline-style: none;
-    position: relative;
-    background: transparent;
-    padding: 10px 23px 10px 10px;
-    background-position-x: 95%;
-    background-color: fade(@color-swatch2, 10%);
-    border: 0;
-    height: 40px;
-}
-
 .ecom-featuredproducts-wrap h2, .ecom-productslist-product h2, .ecom-product h2 {
     font-size: @font-swatch3-font-size;
 }
@@ -1984,6 +1977,7 @@ select {
 /* ===============================
    25. MENU
    =============================== */
+
 .widget.menu .wrapper {
     margin: 0;
     max-width: 100%;
@@ -2241,9 +2235,6 @@ blockquote:before {
     }
     .page-wrap {
         padding:0;
-    }
-    select {
-        width:100%;
     }
     .widget.ecomproductslist label {
         display:block;
