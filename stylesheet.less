@@ -1,46 +1,8 @@
-/* ===============================
-   IMPORT CSS
-   =============================== */
+// IMPORT CSS
 
 @import "@{templateCommon}/basekit-bootstrap.less";
 
-/* 
-Table of Contents -
-
-    1. DEFAULT
-    2. CUSTOM CSS
-    3. DEFAULT PAGE
-    4. LANGUAGE SELECTOR
-    5. HEADER
-    6. FEATURE
-    7. MENU SECTIONS NAVIGATION
-    8. EXTENDED NAVIGATION
-    9. MAP WIDGET
-    10. YOUTUBE WIDGET
-    11. SLIDESHOW WIDGET
-    12. BUTTON WIDGET
-    13. CONTACT FORM WIDGET
-    14. SIGN UP FORM
-    15. WIDGET PROFILE FORM
-    16. BLOG SEARCH
-    17. PAYPAL BUTTON
-    18. TWITTER BUTTON
-    19. DROPBOX BUTTON
-    20. FOOTER
-    21. SOCIAL BAR WIDGET / PROFILE DATA
-    22. BLOG
-    23. GALLERY
-    24. E-COMMERCE
-    25. MENU
-    26. BLOCKQUOTES
-    27. IPAD WIDTH
-    28. IPHONE WIDTH
-    29. PRINT OVERRIDE
-*/
-
-/* ===============================
-   Mixins
-   =============================== */
+// Mixins
 
 .appearance(@appearance: none) {
     -webkit-appearance: @appearance;
@@ -48,9 +10,7 @@ Table of Contents -
     appearance: @appearance;
 }
 
-/* ===============================
-   1. DEFAULT
-   =============================== */
+// DEFAULT
 
 body {
     font-family:@font-swatch5-font-family;
@@ -69,7 +29,6 @@ body {
 a:hover {
     text-decoration: underline;
 }
-
 
 h1, h2, h3, h4, h5, p {
     margin: 0;
@@ -169,10 +128,12 @@ blockquote:before {
     display: block;
     padding-top: 12%;
     padding-bottom: 8%;
+
     @media @tablet {
         padding-top: 24%;
         padding-bottom: 14%;
     }
+
     @media @mobile {
         padding-top: 42%;
         padding-bottom: 21%;
@@ -191,9 +152,7 @@ blockquote:before {
     padding: 30px 0px;
 }
 
-/* ===============================
-   2. CUSTOM CSS
-   =============================== */
+// CUSTOM CSS
 
 .contacttextwidget {
     text-align: center;
@@ -226,11 +185,11 @@ blockquote:before {
 }
 
 header.bk-header {
-  padding: 0;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  background-color: transparent;
+    padding: 0;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background-color: transparent;
 }
 
 .header-container {
@@ -279,9 +238,7 @@ hr.line {
     }
 }
 
-/* ===============================
-   3. DEFAULT PAGE
-   =============================== */
+// DEFAULT PAGE
 
 .bk-pt-default .featureimage {
     height: 100%;
@@ -320,10 +277,7 @@ hr.line {
     }
 }
 
-/* ===============================
-   4. LANGUAGE SELECTOR
-   =============================== */
-
+// LANGUAGE SELECTOR
 
 /* GENERAL STYLES */
 
@@ -612,9 +566,7 @@ hr.line {
     }
 }
 
-/* ===============================
-   5. HEADER
-   =============================== */
+// HEADER
 
 .companyheader {
     display: block;
@@ -649,9 +601,7 @@ hr.line {
     margin-right: 10px;
 }
 
-/* ===============================
-   6. FEATURE
-   =============================== */
+// FEATURE
 
 .featureimage {
     position: relative;
@@ -668,8 +618,10 @@ hr.line {
         width: 100%;
         overflow: hidden;
         height: 100%;
+
         .feature-bgimg {
-            min-height: 600px; /* height should be in the media query */
+            min-height: 600px;
+
             .content {
                 display: table-cell;
                 vertical-align: middle;
@@ -677,40 +629,49 @@ hr.line {
                 -moz-box-sizing: border-box;
                 box-sizing: border-box;
                 background-color: fade(@color-swatch7, 5%);
-            .feature-bgimg .content {
-                padding: 12em 2em;
-            @media @tablet {
-                padding: 8em 1em;
-            }
-            @media @mobile {
-                padding: 6em 1em;
-            }
-            h2 {
-                padding-bottom: 0.1em;
-                word-wrap: break-word;
-                @media @tablet {
-                    font-size: bkscale(@font-swatch8-font-size, 0.7);
-                    line-height: bkscale(@font-swatch8-line-height, 0.75);
+
+                .feature-bgimg .content {
+                    padding: 12em 2em;
+
+                    @media @tablet {
+                        padding: 8em 1em;
+                    }
+
+                    @media @mobile {
+                        padding: 6em 1em;
+                    }
+
+                    h2 {
+                        padding-bottom: 0.1em;
+                        word-break: break-word;
+
+                        @media @tablet {
+                            font-size: bkscale(@font-swatch8-font-size, 0.7);
+                            line-height: bkscale(@font-swatch8-line-height, 0.75);
+                        }
+
+                        span {
+                            padding-bottom: 0;
+                            margin: 0px auto;
+                            display: table;
+                            text-align:center;
+                        }
+                    }
+
+                    h3  { 
+                        display: block;
+                        margin-top: 20px;
+                        text-align: center;
+                        
+                        @media @tablet {
+                            font-size: bkscale(@font-swatch5-font-size, 1.2);
+                            letter-spacing: bkscale(@font-swatch10-letter-spacing, 0.6);
+                            line-height: bkscale(@font-swatch5-line-height, 1.1);
+                            margin-top: 25px;
+                        }
+                    }
                 }
-                span {
-                    padding-bottom: 0;
-                    margin: 0px auto;
-                    display: table;
-                    text-align:center;
-                }
-            }
-            h3  { 
-                display: block;
-                margin-top: 20px;
-                text-align: center;
-                @media @tablet {
-                    font-size: bkscale(@font-swatch5-font-size, 1.2);
-                    letter-spacing: bkscale(@font-swatch10-letter-spacing, 0.6);
-                    line-height: bkscale(@font-swatch5-line-height, 1.1);
-                    margin-top: 25px;
-                }
-            }
-        }
+
                 .spare {
                     display: block;
                     margin: 0 auto;
@@ -747,26 +708,27 @@ hr.line {
 }
 
 .widget.feature .feature-bgimg .content h2 span {
-     padding: 0 12px;
-     margin: 0px auto;
-     display: table;
-     text-align: center;
-     background-color: fade(@color-swatch7, 70%);
-     text-shadow: 0px 1px 1px fade(@color-swatch7, 40%);
+    padding: 0 12px;
+    margin: 0px auto;
+    display: table;
+    text-align: center;
+    background-color: fade(@color-swatch7, 70%);
+    text-shadow: 0px 1px 1px fade(@color-swatch7, 40%);
 }
 
 .widget.feature .feature-bgimg .content h3 span {
-     padding: 3px;
-     margin: 0px auto;
-     display: table;
-     text-align: center;
-     font-style: italic;
-     background-color: fade(@color-swatch6, 50%);
-     text-shadow: 0px 1px 1px fade(@color-swatch7, 40%);
-     letter-spacing: 0.01em;
+    padding: 3px;
+    margin: 0px auto;
+    display: table;
+    text-align: center;
+    font-style: italic;
+    background-color: fade(@color-swatch6, 50%);
+    text-shadow: 0px 1px 1px fade(@color-swatch7, 40%);
+    letter-spacing: 0.01em;
 }
 
 // Feature Section
+
 .feature-section {
     position: relative;
 }
@@ -782,18 +744,22 @@ hr.line {
     bottom: 0;
     width: 100%;
     background-color: fade(@color-swatch6, 40%);
+
     @media @tablet {
         background-color: transparent;
         bottom: inherit;
         top: -50px;
+
         .left {
             float: left;
             width: 100%;
         }
+
         .widget.profile {
             float:none;
             text-align:right;
         }
+
         .widget.profile {
             float: none;
             text-align: center;
@@ -803,17 +769,13 @@ hr.line {
     }
 }
 
-/* ===============================
-   7. MENU SECTIONS NAVIGATION
-   =============================== */
+// MENU SECTIONS NAVIGATION
 
 .bk-pt-default .menu-container {
     background-color: fadeout(@color-swatch4, 95%);   
 }
 
-/* ===============================
-   8. EXTENDED NAVIGATION
-   =============================== */
+// EXTENDED NAVIGATION
 
 .tabletmob-nav {
     display: none;
@@ -836,6 +798,7 @@ hr.line {
     .extendednavigation {
         min-height: 50px;
         padding: 0px 13%;
+
         @media @tablet {
             background-color: fade(@color-swatch6, 40%);
         }
@@ -858,6 +821,7 @@ hr.line {
 
 .widget .extendednavigation ul li.folder:after {
   border-top-color: @font-swatch6-color;
+
   @media @tablet {
         right: 20px;
     }
@@ -867,10 +831,11 @@ hr.line {
     background-color: fade(@color-swatch4, 70%);
     border: 1px solid @color-swatch1;
     margin: 18px 0 0;
+
     @media @tablet {
-            background-color: @color-swatch4;
-            border: 0;
-        }
+        background-color: @color-swatch4;
+        border: 0;
+    }
 }
 
 .widget .extendednavigation ul li a {
@@ -896,6 +861,7 @@ hr.line {
 
 .widget .extendednavigation ul li:hover ul li a {
     padding: 10px 20px;
+
     @media @tablet {
             padding: 18px 20px;
         }
@@ -922,47 +888,45 @@ hr.line {
     border-top-color: @font-swatch6-color;
 }
 
+// MAP WIDGET
 
-
-/* ===============================
-   9. MAP WIDGET
-   =============================== */
-   
 .widget.map {
     margin: 20px 0;
 }
 
-/* ===============================
-   10. YOUTUBE WIDGET
-   =============================== */
-   
+// YOUTUBE WIDGET
+
 .widget.youtube {
     margin: 20px 0;
 }
 
-/* ===============================
-   11. SLIDESHOW WIDGET
-   =============================== */
+// SLIDESHOW WIDGET
 
 .widget.responsiveslideshow {
     margin: 20px 0;
+
     .slideshow-image-list,
     .slideshow-widget {
         min-height: 450px;
+
         @media @tablet {
             min-height: 350px;
         }
+
         @media @mobile {
             min-height: 280px;
             height: 280px;
         }
     }
+
     .title {
         display: block;
     }
+
     .content-wrapper {
         background-color: fade(@color-swatch3, 80%);
     }
+
     .slideshow-widget {
         /* Play Button */
         .btn-play {
@@ -972,26 +936,32 @@ hr.line {
             background-color: fade(@color-swatch3, 80%);
             width: 60px;
             height: 60px;
+
             @media @tablet {
                 width: 50px;
                 height: 50px;
             }
+
             @media @mobile {
                 width: 40px;
                 height: 40px;
             }
+
             &:hover {
                 background-color: @color-swatch3;
             }
+
             &:after {
                 color: @color-swatch1;
                 font-size: 16px;
                 line-height: 60px;
                 top: 2px;
+
                 @media @tablet {
                     line-height: 50px;
                     font-size: 14px;
                 }
+
                 @media @mobile {
                     line-height: 40px;
                     font-size: 12px;
@@ -1053,23 +1023,23 @@ hr.line {
 }
 
 .svg .widget.responsiveslideshow .slideshow-widget .btn-prev {
-  left: 10px;
-  background: image('/images/slideshow-arrow-left.svg') no-repeat center left;
-  background-size: contain;
+    left: 10px;
+    background: image('/images/slideshow-arrow-left.svg') no-repeat center left;
+    background-size: contain;
 }
 
 .widget.responsiveslideshow .slideshow-widget .btn-prev {
-  background: image('/images/slideshow-arrow-left.png') no-repeat center left;
+    background: image('/images/slideshow-arrow-left.png') no-repeat center left;
 }
 
 .svg .widget.responsiveslideshow .slideshow-widget .btn-next {
-  right: 10px;
-  background: image('/images/slideshow-arrow-right.svg') no-repeat center right;
-  background-size: contain;
+    right: 10px;
+    background: image('/images/slideshow-arrow-right.svg') no-repeat center right;
+    background-size: contain;
 }
 
 .widget.responsiveslideshow .slideshow-widget .btn-next {
-  background: image('/images/slideshow-arrow-right.png') no-repeat center right;
+    background: image('/images/slideshow-arrow-right.png') no-repeat center right;
 }
 
 .widget.responsiveslideshow .crop .image-wrapper {
@@ -1087,9 +1057,7 @@ hr.line {
     padding: 5px 10px 10px 10px;
 }
 
-/* ===============================
-   12. BUTTON WIDGET
-   =============================== */
+// BUTTON WIDGET
 
 .widget.tweet a, .widget.button .btn {
     margin: 0.5em 0;
@@ -1164,9 +1132,7 @@ a.contentgroup__link {
 	}
 }
 
-/* ===============================
-   13. CONTACT FORM WIDGET
-   =============================== */
+// CONTACT FORM WIDGET
 
 label {
     font-family: @font-swatch4-font-family;
@@ -1187,7 +1153,6 @@ input, select, textarea {
     font-family: @font-swatch5-font-family;
     font-size: @font-swatch5-font-size;
     color: @font-swatch5-color;
-
 
     &:focus {
         outline: none;
@@ -1264,9 +1229,11 @@ button.btn, .widget.ecomcheckout .checkout-order-button,
     padding: 10px 25px;
     border: 0;
     border-radius: 0;
+
     &:hover {
        background-color: @color-swatch3;
     }
+
     @media @mobile {
         width: 100%;
     }
@@ -1307,13 +1274,12 @@ button.btn, .widget.ecomcheckout .checkout-order-button,
 	}
 }
 
-/* ===============================
-   14. SIGN UP FORM
-   =============================== */
+// SIGN UP FORM
 
 .signupform fieldset button {
     padding: 10px 25px;
     width: 33%;
+
     @media @mobile {
         width: 100%;
     }
@@ -1323,25 +1289,26 @@ button.btn, .widget.ecomcheckout .checkout-order-button,
     width: 65%;
     border: 0;
     text-indent: 12px;
+    
     @media @mobile {
         margin-bottom: 20px;
         width: 100%;
     }
 }
 
-/* ===============================
-   15. WIDGET PROFILE FORM
-   =============================== */
+// WIDGET PROFILE FORM
 
 .widget.profile form button {
     color: darken(@font-swatch7-color, 10%);
     background-color: fade(@color-swatch3, 80%);
     padding: 10px 25px 8px;
     width: 33%;
+
     &:hover {
         color: @color-swatch1;
         background-color: @color-swatch3;
     }
+
     @media @mobile {
         width: 100%;
     }
@@ -1350,15 +1317,14 @@ button.btn, .widget.ecomcheckout .checkout-order-button,
 .widget.profile form fieldset input {
     width: 65%;
     background-color: fade(@color-swatch2, 10%);
+
     @media @mobile {
         margin-bottom: 20px;
         width: 100%;
     }
 }
 
-/* ===============================
-   16. BLOG SEARCH
-   =============================== */
+// BLOG SEARCH
 
 .blogsearch form button, .blog-search-submit-button {
     font-family: @font-swatch7-font-family;
@@ -1373,6 +1339,7 @@ button.btn, .widget.ecomcheckout .checkout-order-button,
     @media @tablet {
         width: 38%;
     }
+
     @media @mobile {
         width: 100%;
     }
@@ -1380,6 +1347,7 @@ button.btn, .widget.ecomcheckout .checkout-order-button,
 
 .blogsearch label {
     display: none;
+
     @media @mobile {
         display: inherit;
         margin-bottom: 10px;
@@ -1391,9 +1359,11 @@ button.btn, .widget.ecomcheckout .checkout-order-button,
     border: 0;
     height: 49px;
     -webkit-appearance: none;
+
     @media @tablet {
         width: 60%;
     }
+
     @media @mobile {
         margin-bottom: 20px;
         width: 100%;
@@ -1404,28 +1374,21 @@ button.btn, .widget.ecomcheckout .checkout-order-button,
     margin-top: 20px;
 }
 
-/* ===============================
-   17. PAYPAL BUTTON
-   =============================== */
+// PAYPAL BUTTON
 
 .widget.paypalbuynow .widget.button.paypal, .widget.dropbox button {
     padding: 10px 10px 10px 40px;
     border-radius: 0;
 }
 
-/* ===============================
-   18. TWITTER BUTTON
-   =============================== */
+// TWITTER BUTTON
 
 .widget.tweet a {
     display: inline-block;
     padding: 10px 10px 10px 40px;
 }
 
-/* ===============================
-   19. DROPBOX BUTTON
-   =============================== */
-
+// DROPBOX BUTTON
 
 .widget.dropbox button:hover {
     background-image: image('/images/dropbox-icon.png');
@@ -1443,10 +1406,7 @@ button.btn, .widget.ecomcheckout .checkout-order-button,
   transition: background-color 0.15s ease-in-out;
 }
 
-
-/* ===============================
-   20. FOOTER
-   =============================== */
+// FOOTER
 
 footer.bk-footer {
     min-height: 100px;
@@ -1479,9 +1439,7 @@ footer.bk-footer {
     }
 }
 
-/* ===============================
-   21. SOCIAL BAR WIDGET / PROFILE DATA
-   =============================== */
+// SOCIAL BAR WIDGET / PROFILE DATA
 
 .widget.socialicons span a {
     border-radius: 20px;
@@ -1505,17 +1463,15 @@ footer .widget.profile .bk-profile-socialicons span a:hover {
 }
 
 .widget.socialicons, .widget.profile .bk-profile-socialicons {
-  min-height: 32px;
+    min-height: 32px;
 }
 
 .widget.socialicons span a, .widget.profile .bk-profile-socialicons span a {
-  text-align: center;
-  border-radius: 20px;
+    text-align: center;
+    border-radius: 20px;
 }
 
-/* ===============================
-   22. BLOG
-   =============================== */
+// BLOG
 
 .widget.blogpostlist .blog-post-item {
     border-bottom: 1px dotted @color-swatch5;
@@ -1542,6 +1498,7 @@ footer .widget.profile .bk-profile-socialicons span a:hover {
 .blog-post-item {
     margin: 1.5em 0;
     padding-bottom: 1em;
+
     h2 {
         a {
             font-family: @font-swatch2-font-family;
@@ -1551,6 +1508,7 @@ footer .widget.profile .bk-profile-socialicons span a:hover {
             color: @font-swatch2-color;
             letter-spacing: @font-swatch2-letter-spacing;
             text-decoration: none;
+
             &:hover {
                 text-decoration: underline;
             }
@@ -1581,27 +1539,28 @@ footer .widget.profile .bk-profile-socialicons span a:hover {
    background-position: center;
    height: 250px;
    margin-bottom: 20px;
+
    img {
        display: none;
    }
 }
 
-
-/* ===============================
-   23. GALLERY
-   =============================== */
+// GALLERY
 
 .widget.gallery {
     margin: 20px 0 20px -0.5%;
+
     ul li {
         @media @tablet {
             width: 50%;
             padding-bottom: 50%;
         }
+
         @media @mobile {
             width: 100%;
             padding-bottom: 100%;
         }
+
         span.inner {
             .title,
             .description {
@@ -1611,16 +1570,19 @@ footer .widget.profile .bk-profile-socialicons span a:hover {
                 letter-spacing: @font-swatch4-letter-spacing;
                 text-align: center;
             }
+
             .title {
                 font-size: @font-swatch4-font-size;
                 line-height: @font-swatch4-line-height;
                 margin: 35% 30px;
                 padding-bottom: 20px;
                 border-bottom: 1px solid @color-swatch1;
+
                 @media @tablet {
                     font-size: bkscale(@font-swatch4-font-size, 0.7);
                     line-height: bkscale(@font-swatch4-line-height, 0.8);
                 }
+
                 @media @mobile {
                     margin: 30% 20px;
                     padding-bottom: 12px;
@@ -1628,13 +1590,16 @@ footer .widget.profile .bk-profile-socialicons span a:hover {
                     line-height: bkscale(@font-swatch4-line-height, 0.9);
                 }
             }
+
             .description {
                 font-size: @font-swatch5-font-size;
                 line-height: 20px;
+
                 @media @tablet {
                     font-size: bkscale(@font-swatch5-font-size, 0.7);
                     line-height: bkscale(@font-swatch5-line-height, 0.8);
                 }
+
                 @media @mobile {
                     font-size: bkscale(@font-swatch5-font-size, 0.7);
                     line-height: bkscale(@font-swatch5-line-height, 0.7);
@@ -1642,6 +1607,7 @@ footer .widget.profile .bk-profile-socialicons span a:hover {
             }
         }
     }
+
     // Image Data
     .image-data {
         display: block;
@@ -1652,15 +1618,14 @@ footer .widget.profile .bk-profile-socialicons span a:hover {
         -moz-transition: all 0.4s ease-out;
         -o-transition: all 0.4s ease-out;
         transition: all 0.4s ease-out;
+
         &:hover {
             opacity: 1;
         }
     }
 }
 
-/* ===============================
-   24. E-COMMERCE
-   =============================== */
+// E-COMMERCE
 
 .widget.ecomcheckout .checkout-order-button {
     background-color:@color-swatch3;
@@ -1687,6 +1652,7 @@ footer .widget.profile .bk-profile-socialicons span a:hover {
 
 .widget.ecomcheckout table tr td .checkout-quantitybtn button {
     background-color: @color-swatch3;
+
     &:hover {
         background-color: lighten(@color-swatch3,10%);
     }
@@ -1714,6 +1680,7 @@ footer .widget.profile .bk-profile-socialicons span a:hover {
     background-color: fade(@color-swatch3, 80%);
     border: 0;
     text-decoration: none;
+
     &:hover {
         color: @font-swatch7-color;
         background-color: @color-swatch3;
@@ -1726,6 +1693,43 @@ footer .widget.profile .bk-profile-socialicons span a:hover {
 
 .ecom-productlist-info {
     text-align: left;
+}
+
+.widget.ecomproductslist {
+    .ecom-productslist {
+        &-products {
+            margin-left: 0;
+            max-width: none;
+            overflow: hidden;
+        }
+
+        &-product {
+            display: block;
+            float: left;
+            width: 100%/3;
+            margin: 0 0 30px;
+            margin-bottom: 30px;
+            padding: 10px;
+            overflow: auto;
+            
+            @media @tablet {
+                width: 100%/2;
+            }
+            
+            @media @mobile {
+                width: 100%;
+            }
+
+            .responsivecolumns & {
+                width: 100%;
+            }
+        }
+
+        &-image-wrap {
+            background-position: center;
+            margin-bottom: 20px;
+        }
+    }
 }
 
 .widget.ecomproductslist .ecom-productslist-image-wrap {
@@ -1763,73 +1767,85 @@ footer .widget.profile .bk-profile-socialicons span a:hover {
 // Ecom Basket Summary
 
 .ecombasketsummary a {
-  font-family: @font-swatch7-font-family;
-  font-size: @font-swatch7-font-size;
-  font-weight: @font-swatch7-font-weight;
+    font-family: @font-swatch7-font-family;
+    font-size: @font-swatch7-font-size;
+    font-weight: @font-swatch7-font-weight;
 }
 
 .basket-summary-product-info a {
-  font-family: @font-swatch6-font-family;
-  font-size: @font-swatch6-font-size;
-  font-weight: @font-swatch6-font-weight;
+    font-family: @font-swatch6-font-family;
+    font-size: @font-swatch6-font-size;
+    font-weight: @font-swatch6-font-weight;
 }
 
 .ecombasket .ecombasket-pull p {
-  font-family: @font-swatch7-font-family;
-  font-size: @font-swatch7-font-size;
+    font-family: @font-swatch7-font-family;
+    font-size: @font-swatch7-font-size;
 }
 
 .widget.ecombasketsummary {
-  padding-top: 20px;
-  margin-bottom: 20px;
-  table {
-    border-spacing: 0;
-    width: 100%;
-    list-style: none;
-    font-size: 18px;
-    color: @color-swatch4;
-    margin: 20px 0 30px;
-    @media @tablet {
-      padding: 0px;
-    }
-    @media @mobile {
-      padding: 0px;
-      margin: 0px 0px 30px 0px;
-    }
-    tr:first-child { 
-        outline: 1px solid darken(@color-swatch1, 10%);
-        font-family: @font-swatch4-font-family;
-        font-size: @font-swatch6-font-size;
-        font-weight: @font-swatch4-font-weight;
-        color: @font-swatch4-color;
-        text-transform: uppercase;
-        @media @mobile {
-            font-size: 12px;
-            display: none!important;
+    padding-top: 20px;
+    margin-bottom: 20px;
+
+    table {
+        border-spacing: 0;
+        width: 100%;
+        list-style: none;
+        font-size: 18px;
+        color: @color-swatch4;
+        margin: 20px 0 30px;
+
+        @media @tablet {
+            padding: 0px;
         }
+
         @media @mobile {
-            font-size: 12px;
-            display: table-header-group;
-            th:nth-child(2) {
-                display: none;
+            padding: 0px;
+            margin: 0px 0px 30px 0px;
+        }
+
+        tr:first-child { 
+            outline: 1px solid darken(@color-swatch1, 10%);
+            font-family: @font-swatch4-font-family;
+            font-size: @font-swatch6-font-size;
+            font-weight: @font-swatch4-font-weight;
+            color: @font-swatch4-color;
+            text-transform: uppercase;
+
+            @media @mobile {
+                font-size: 12px;
+                display: none!important;
             }
-            th:nth-child(3) {
-                padding-left: 12px;
+
+            @media @mobile {
+                font-size: 12px;
+                display: table-header-group;
+
+                th:nth-child(2) {
+                    display: none;
+                }
+
+                th:nth-child(3) {
+                    padding-left: 12px;
+                }
             }
         }
-    }
-    th {
-      text-align: left;
-      position: relative;
-      left: 20px;
-    }
-            tr td {
+
+        th {
+            text-align: left;
+            position: relative;
+            left: 20px;
+        }
+
+        tr td {
             border-bottom: 1px solid darken(@color-swatch1,10%);
+
             @media (max-width: 360px) {
                 display: table;
                 width: 100%;
                 border-bottom: 0;
             }
+
             &:nth-child(1),
             &:nth-child(2) {
                 padding: 20px;
@@ -1838,21 +1854,25 @@ footer .widget.profile .bk-profile-socialicons span a:hover {
                   padding:20px 0px;
                 }
             }
+
             &:nth-child(2) {
                 @media (max-width: 530px) {
                     padding-left: 0;
                 }
             }
+
             &:nth-child(3) {
                 padding: 20px;
                 margin-top:0;
             }
+
             // Responsive
             &:nth-child(1) {
                 @media (max-width: 360px) {
                     padding-bottom: 0;
                 }
             }
+
             &:nth-child(2),
             &:nth-child(3) {
                 @media (max-width: 360px) {
@@ -1860,6 +1880,7 @@ footer .widget.profile .bk-profile-socialicons span a:hover {
                     border-left: 0;
                 }
             }
+
             &:last-child {
                 @media (max-width: 360px) {
                     padding: 6px 20px;
@@ -1869,63 +1890,81 @@ footer .widget.profile .bk-profile-socialicons span a:hover {
                 }
             }
         }
+
         tr:last-child td:last-child {
             @media (max-width: 360px) {
                 border-top: 0;
                 margin-top: 0;
                 padding-top: 0;
             }
-}
-    .basket-summary-items {
-      background: transparent;
-      @media @tablet {
+        }
+
+        .basket-summary-items {
+            background: transparent;
+            display: table-row-group;
+            
+            @media @tablet {
                 img {
-            max-width:100px!important;
-        }
-              @media @mobile {
+                    max-width:100px!important;
+                }
+            }
+
+            @media @mobile {
                 img {
-            max-width:80px!important;
+                    max-width:80px!important;
+                }
+            }
+
+            + tr {
+                display: block;
+            }
         }
-        display: table-row-group;
-        + tr {
-          display: block;
-        }
-      }
-  }
-      &:last-child {
+    }
+
+    &:last-child {
         td {
-          padding-bottom: 25px;
+            padding-bottom: 25px;
         }
-      }
-      .image-wrap {
+    }
+
+    .image-wrap {
         background-image: none!important;
-      }
-      td:nth-child(2) {
+    }
+
+    td:nth-child(2) {
         padding-left: 15px;
-      }
-      .basket-summary-pricepu, .basket-summary-quantity, .basket-summary-amount {
+    }
+
+    .basket-summary-pricepu, .basket-summary-quantity, .basket-summary-amount {
         font-size: @font-swatch5-font-size;
         line-height: @font-swatch5-line-height;
+
         label {
-          display:block;
+            display:block;
         }
-      }
-      .basket-summary-pricepu {
+    }
+
+    .basket-summary-pricepu {
         display: none;
-      }
-      .basket-summary-quantity {
+    }
+
+    .basket-summary-quantity {
         margin-top: 4px;
-      }
-      .basket-summary-quantity, .basket-summary-quantitybtn {
+    }
+
+    .basket-summary-quantity, .basket-summary-quantitybtn {
         display: inline-block;
+
         label {
             display: none;
         }
+
         span {
             padding: 5px 20px;
             margin: 0;
             position: relative;
         }
+
         button {
             width: 30px;
             height: 30px;
@@ -1935,56 +1974,57 @@ footer .widget.profile .bk-profile-socialicons span a:hover {
             color: darken(@font-swatch7-color, 10%);
             background-color: fade(@color-swatch3, 80%);
             margin-top: 3px;
+
             &:hover {
                 background-color: @color-swatch3;
             }
         }
     }
+
     .basket-summary-amount {
         color: darken(@color-swatch4, 10%);
-        }
     }
+    
     .basket-summary-subtotal {
-      color: darken(@color-swatch4, 10%);
-      display: block;
-      font-size: bkscale(@font-swatch5-font-size, 1.05);
-      margin-top: 25px;
-      border: 2px solid darken(@color-swatch4, 10%);
-      padding: 20px;
-      font-weight: 700;
+        color: darken(@color-swatch4, 10%);
+        display: block;
+        font-size: bkscale(@font-swatch5-font-size, 1.05);
+        margin-top: 25px;
+        border: 2px solid darken(@color-swatch4, 10%);
+        padding: 20px;
+        font-weight: 700;
     }
-  }
 }
 
 .basket-summary-submit, .basket-summary-empty-cta {
-  display: inline-block;
-  padding: 0 12px;
-  line-height: 45px;
-  height: 45px;
-  font-weight: @font-swatch7-font-weight;
+    display: inline-block;
+    padding: 0 12px;
+    line-height: 45px;
+    height: 45px;
+    font-weight: @font-swatch7-font-weight;
 }
 
 .basket-summary-empty-cta.btn {
-  background-color:@color-swatch3;
-  text-decoration: none;
-  margin-bottom:20px;
-  &:hover {
-    background-color:@color-swatch7;
-  }
+    background-color:@color-swatch3;
+    text-decoration: none;
+    margin-bottom:20px;
+    
+    &:hover {
+        background-color:@color-swatch7;
+    }
 }
 
 .basket-summary-legal-links {
     padding-top:10px;
     list-style: none;
     padding-left:0;
+
     &:hover {
         text-decoration:underline!important;
     }
 }
 
-/* ===============================
-   25. MENU
-   =============================== */
+// MENU
 
 .widget.menu .wrapper {
     margin: 0;
@@ -2014,7 +2054,6 @@ footer .widget.profile .bk-profile-socialicons span a:hover {
     color: @font-swatch7-color;
     padding: 3px 10px;
     font-size: 12px;
-    //border-radius: 5px;
 }
 
 .menu .menu-subsection {
@@ -2031,15 +2070,14 @@ footer .widget.profile .bk-profile-socialicons span a:hover {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
     img {
         display: none;
         border: none;
     }
 }
 
-/* ===============================
-   26. BLOCKQUOTES
-   =============================== */
+// BLOCKQUOTES
 
 blockquote {
     background-color: fade(@color-swatch2, 10%);
@@ -2065,14 +2103,9 @@ blockquote:before {
     font-size: @font-swatch1-font-size;
 }
 
-/* ===============================
-   27. IPAD WIDTH
-   =============================== */
+// IPAD WIDTH
 
 @media only screen and (max-width: 768px) {
-
-  /* UL ALIGN RIGHT */
-
     .widget .extendednavigation {
         max-width:100%;
     }  
@@ -2081,8 +2114,9 @@ blockquote:before {
         background-position: 12px center;
         padding-right: 0;
     }
+
     .bk-content-text h2:before, .bk-content-text h2:after {
-      display:none;
+        display:none;
     }
 
     .widget.menu .main .menu-header h1:before,
@@ -2121,6 +2155,7 @@ blockquote:before {
     .widget.menusections {
         min-height:0;
     }
+
     .feature-overlay {
         margin-top:-2px;
     }
@@ -2128,6 +2163,7 @@ blockquote:before {
     .tabletmob-nav {
         min-height:50px;
     }
+
     .canvas {
         padding:30px 0px;
     }
@@ -2171,20 +2207,25 @@ blockquote:before {
     .widget.extendednavigation .bk-overlay {
         width:100%;
     }
+
     .featurebtn {
         background-size:50px;
     }
+
     .featurebtn-container {
         margin-top: -130px;
         padding-bottom: 80px;
     }
+
     .widget.logo {
         float:none;
     }
+
     .bk-pt-default .widget .extendednavigation {
         display:block;
         float:none;
     }
+
     .widget .extendednavigation {
         display:block;
         padding:0;
@@ -2202,9 +2243,11 @@ blockquote:before {
         padding-top: 50px;
         padding-bottom: 20px;
     }
+
     .bk-pt-default .widget.menusections {
         margin-top: 0;
     }
+
     .widget.extendednavigation .bk-overlay {
         position: absolute;
         right: 0px;
@@ -2214,13 +2257,16 @@ blockquote:before {
         z-index: 8000;
         cursor: pointer;
     }
+
     .bk-pt-default .widget .extendednavigation a.pull {
         top:15px;
         left:0;
     }
+
     .widget .extendednavigation ul li {
         padding:0.5em 0; 
     }
+
     .widget .extendednavigation a.pull {
         top: 0px;
         margin: 0px auto;
@@ -2228,25 +2274,30 @@ blockquote:before {
         z-index: 99999;
     }
 
-     .bk-pt-default .widget .extendednavigation a.pull:after {
+    .bk-pt-default .widget .extendednavigation a.pull:after {
         background-image: image('/images/nav-icon.png');
         height:16px;
         margin: 0px auto;
     }
+
     .widget.feature .feature-bgimg .content h2 {
         font-size: bkscale(@font-swatch8-font-size,0.6);
         line-height:bkscale(@font-swatch8-line-height,0.6);
         letter-spacing:bkscale(@font-swatch2-letter-spacing,0.5);
     }
+
     .bk-pt-default .canvas {
         padding:0;
     }
+
     .page-wrap {
         padding:0;
     }
+
     .widget.ecomproductslist label {
         display:block;
     }
+
     .widget.extendednavigation ul li {
         padding:0;
     }
@@ -2254,12 +2305,15 @@ blockquote:before {
     .widget.extendednavigation ul li a {
         padding: 18px 20px;
     }
+
     .productlist-search input, .productlist-search button {
         width: 100%;
     }
+
     .productlist-search button {
         margin-top: 20px;
     }
+
     .widget.ecomproductslist .productlist-filter .productlist-display-form .form-group {
         display:block;
     }
@@ -2269,18 +2323,16 @@ blockquote:before {
     }
 }
 
-/* ===============================
-   28. IPHONE WIDTH
-   =============================== */
+// IPHONE WIDTH
 
 @media only screen and (max-width: 480px) {
 
   /* UL ALIGN RIGHT */
-
     .widget.extendednavigation ul.align-right li.folder {
         background-position: 12px center;
         padding-right: 0;
     }
+
     .widget .extendednavigation a.menu-pull:after {
         right: 38%;
     }
@@ -2290,38 +2342,42 @@ blockquote:before {
     }
 
     .companyheader .companyname a {
-          font-size: bkscale(@font-swatch10-font-size,0.9);
-          line-height: bkscale(@font-swatch10-line-height,0.8);
-          padding-bottom:0px;  
+        font-size: bkscale(@font-swatch10-font-size,0.9);
+        line-height: bkscale(@font-swatch10-line-height,0.8);
+        padding-bottom:0px;  
     }
 
     .bk-content-text p {
         font-size: bkscale(@font-swatch5-font-size,1.1);
     }
+
     .widget.feature .feature-bgimg .content h2 {
-          font-size: bkscale(@font-swatch8-font-size,0.5);
-          line-height: bkscale(@font-swatch8-line-height,0.5);
-          letter-spacing: bkscale(@font-swatch2-letter-spacing,0.5);
+        font-size: bkscale(@font-swatch8-font-size,0.5);
+        line-height: bkscale(@font-swatch8-line-height,0.5);
+        letter-spacing: bkscale(@font-swatch2-letter-spacing,0.5);
     }
+
     .widget.feature .feature-bgimg .content h3 {
-          font-size: bkscale(@font-swatch9-font-size,0.8);
-          line-height: bkscale(@font-swatch9-line-height,0.9);
-          letter-spacing: bkscale(@font-swatch2-letter-spacing,0.5);
+        font-size: bkscale(@font-swatch9-font-size,0.8);
+        line-height: bkscale(@font-swatch9-line-height,0.9);
+        letter-spacing: bkscale(@font-swatch2-letter-spacing,0.5);
     }
+
     .bk-content-text h2 {
         font-size: bkscale(@font-swatch3-font-size,1.1);
     }
+
     .menu-subsection-name {
         font-size: bkscale(@font-swatch2-font-size,0.6);
-          line-height: bkscale(@font-swatch2-line-height,0.6);
+        line-height: bkscale(@font-swatch2-line-height,0.6);
     }
 
     .widget.menu {
-      margin-top:0px;
+        margin-top:0px;
     }
 
     .bk-content-text h2:before, .bk-content-text h2:after {
-      display:none;
+        display:none;
     }
 
     .widget.contactform form {
@@ -2402,36 +2458,41 @@ blockquote:before {
         margin-top: -130px;
         padding-bottom: 80px;
     }
+
     .mainzone {
         padding: 0;
     }
+
     .widget.feature .feature-bgimg {
         height: 570px;
     }
-
 }
 
-/* ===============================
-   29. PRINT OVERRIDE
-   =============================== */
+// PRINT OVERRIDE
+
 .print-mixin {
     .headerrow,
     .bk-footer,
     .bk-header .widget.profile  {
         display:none;
     }
+
     .companyheader {
         padding:0px;
     }
+
     .menu-container {
         display:none;
     }
+
     .menu-info {
         margin:0px;
     }
+
     .widget.menu .main.wrapper {
         page-break-before:always;
     }
+
     .widget.menu .menu-item-image-wrap {
         height:150px;
     }
