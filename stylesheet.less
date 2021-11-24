@@ -1413,6 +1413,35 @@ footer.bk-footer {
     background-color: @color-swatch6;
     padding: 2em 0 1em;
     text-align: center;
+
+	.widget.profile {
+        .form-group {
+            display: flex;
+            align-items: center;
+
+            @media @tablet {
+                display: block;
+            }
+        }
+
+        form fieldset input {
+            min-width: 60%;
+        }
+
+        form button {
+            word-break: break-word;
+            height: auto;
+            width: auto;
+            min-width: 30%;
+            margin: 0 0 0 5px;
+            line-height: 1.25em;
+            min-height: 44px;
+
+            @media @tablet {
+                margin: 5px 0;
+            }
+        }
+	}
 }
 
 .footer-container {
