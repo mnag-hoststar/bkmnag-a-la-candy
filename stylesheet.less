@@ -279,7 +279,7 @@ hr.line {
 
 // LANGUAGE SELECTOR
 
-/* GENERAL STYLES */
+// GENERAL STYLES
 
 @language-padding: 0.5em;
 
@@ -289,20 +289,20 @@ hr.line {
     box-sizing: content-box;
 }
 
-/* LANGAUGE SELECTOR LIGHT */
+// LANGUAGE SELECTOR LIGHT
 
 .language-selector,
 .language-selector.language-selector--light {
     background-color: fade(@color-swatch6, 40%);
 }
 
-/* LANGUAGE SELECTOR DARK */
+// LANGUAGE SELECTOR DARK
 
 .language-selector.language-selector--dark {
     background-color: @color-swatch3;
 }
 
-/* GENERAL STYLES INSIDE THE LANGUAGE SELECTOR */
+// GENERAL STYLES INSIDE THE LANGUAGE SELECTOR
 
 .language-selector {
     .language-selector__inner {
@@ -365,7 +365,7 @@ hr.line {
     }
 }
 
-/* LANGUAGE SELECTOR DROPDOWN */
+// LANGUAGE SELECTOR DROPDOWN
 
 .language-selector.language-selector--dropdown {
     height: auto;
@@ -480,7 +480,7 @@ hr.line {
     }
 }
 
-/* LANGUAGE SELECTOR SINGLE ITEM */
+// LANGUAGE SELECTOR SINGLE ITEM
 
 .language-selector__item {
 	.language-selector &,
@@ -542,7 +542,8 @@ hr.line {
     }
 }
 
-/* LANGUAGE SELECTOR TEXT */
+// LANGUAGE SELECTOR TEXT
+
 .language-selector__link {
 	.language-selector &,
     .language-selector.language-selector--horizontal & {
@@ -576,7 +577,7 @@ hr.line {
     display: table;
 }
 
-/* COMPANY NAME */
+// COMPANY NAME
 
 .widget.companyname {
     display: block;
@@ -593,7 +594,7 @@ hr.line {
     text-decoration: none;
 }
 
-/* LOGO */
+// LOGO
 
 .widget.logo {
     display: block;
@@ -928,7 +929,7 @@ hr.line {
     }
 
     .slideshow-widget {
-        /* Play Button */
+        // Play Button
         .btn-play {
             -webkit-border-radius: 50%;
             -moz-border-radius: 50%;
@@ -969,7 +970,9 @@ hr.line {
             }
         }
     }
-    /* Slideshow Controls */
+
+    // Slideshow Controls
+
     .slideshow-widget-controls {
         .dot {
             width: 5px;
@@ -1205,19 +1208,19 @@ select {
     margin-bottom: 1em;
 }
 
-/* PLACEHOLDER CSS */
+// PLACEHOLDER CSS
 
-::-webkit-input-placeholder { /* WebKit browsers */
-    color:    @color-swatch5;
+::-webkit-input-placeholder {
+    color: @color-swatch5;
 }
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:   @color-swatch5;
+:-moz-placeholder {
+    color: @color-swatch5;
 }
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    @color-swatch5;
+::-moz-placeholder {
+    color: @color-swatch5;
 }
-:-ms-input-placeholder { /* Internet Explorer 10+ */
-    color:    @color-swatch5;
+:-ms-input-placeholder {
+    color: @color-swatch5;
 }
 
 button.btn, .widget.ecomcheckout .checkout-order-button, 
@@ -1562,7 +1565,7 @@ footer .widget.profile .bk-profile-socialicons span a:hover {
     width: 100%;
 }
 
-.blog-post-feature-image-wrap {  /* Blog post feature image */
+.blog-post-feature-image-wrap {
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center;
@@ -1593,7 +1596,6 @@ footer .widget.profile .bk-profile-socialicons span a:hover {
         span.inner {
             .title,
             .description {
-                // Font
                 color: @color-swatch1;
                 font-family: @font-swatch4-font-family;
                 letter-spacing: @font-swatch4-letter-spacing;
@@ -1638,6 +1640,7 @@ footer .widget.profile .bk-profile-socialicons span a:hover {
     }
 
     // Image Data
+
     .image-data {
         display: block;
         opacity: 0;
@@ -1895,7 +1898,6 @@ footer .widget.profile .bk-profile-socialicons span a:hover {
                 margin-top:0;
             }
 
-            // Responsive
             &:nth-child(1) {
                 @media (max-width: 360px) {
                     padding-bottom: 0;
@@ -2061,7 +2063,7 @@ footer .widget.profile .bk-profile-socialicons span a:hover {
     width: auto;
 }
 
-.menu-subsection .menu-subsection-promoted { /* PROMOTED SUB-SECTION */  
+.menu-subsection .menu-subsection-promoted {
     padding: 2em 2em 0;
     margin-bottom: 2em;
     position: relative;
@@ -2355,8 +2357,6 @@ blockquote:before {
 // IPHONE WIDTH
 
 @media only screen and (max-width: 480px) {
-
-  /* UL ALIGN RIGHT */
     .widget.extendednavigation ul.align-right li.folder {
         background-position: 12px center;
         padding-right: 0;
