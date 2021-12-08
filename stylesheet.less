@@ -2,6 +2,9 @@
 
 @import "@{templateCommon}/basekit-bootstrap.less";
 
+@mobile-large: ~"only screen and (max-width: 530px)";
+@mobile-small: ~"only screen and (max-width: 360px)";
+
 // Mixins
 
 .appearance(@appearance: none) {
@@ -2203,7 +2206,7 @@ footer.bk-footer {
         tr td {
             border-bottom: 1px solid darken(@color-swatch1,10%);
 
-            @media (max-width: 360px) {
+            @media @mobile-small {
                 display: table;
                 width: 100%;
                 border-bottom: 0;
@@ -2219,7 +2222,7 @@ footer.bk-footer {
             }
 
             &:nth-child(2) {
-                @media (max-width: 530px) {
+                @media @mobile-large {
                     padding-left: 0;
                 }
             }
@@ -2230,21 +2233,21 @@ footer.bk-footer {
             }
 
             &:nth-child(1) {
-                @media (max-width: 360px) {
+                @media @mobile-small {
                     padding-bottom: 0;
                 }
             }
 
             &:nth-child(2),
             &:nth-child(3) {
-                @media (max-width: 360px) {
+                @media @mobile-small {
                     padding: 0 20px 0;
                     border-left: 0;
                 }
             }
 
             &:last-child {
-                @media (max-width: 360px) {
+                @media @mobile-small {
                     padding: 6px 20px;
                     margin: 20px 0 0;
                     border-bottom: 1px solid darken(@color-swatch1,10%);
@@ -2254,7 +2257,7 @@ footer.bk-footer {
         }
 
         tr:last-child td:last-child {
-            @media (max-width: 360px) {
+            @media @mobile-small {
                 border-top: 0;
                 margin-top: 0;
                 padding-top: 0;
