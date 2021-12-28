@@ -291,30 +291,12 @@ blockquote {
 	}
 }
 
-.socialheader {
-    float: none;
 }
 
-header.bk-header {
-    padding: 0;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    background-color: transparent;
 
-    @media @tablet {
-        padding: 40px 0 20px 0;
-    }
 
-    .bk-pt-default & {
-        position: relative;
-        background-color: fade(@color-swatch6, 50%);
-        margin-bottom: 20px;
-    }
 }
 
-.header-container {
-    padding: 20px 0px;
 }
 
 // LINE
@@ -340,6 +322,34 @@ hr.line {
 	.style--dark & {
 		background-color: lighten(@color--dark, 15%);
 	}
+}
+
+// HEADER
+
+.socialheader {
+	float: none;
+}
+
+header.bk-header {
+	padding: 0;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	background-color: transparent;
+
+	@media @tablet {
+		padding: 40px 0 20px 0;
+	}
+
+	.bk-pt-default & {
+		position: relative;
+		background-color: fade(@color-swatch6, 50%);
+		margin-bottom: 20px;
+	}
+}
+
+.header-container {
+	padding: 20px 0px;
 }
 
 // CONTENT
@@ -925,7 +935,7 @@ hr.line {
 	}
 }
 
-// EXTENDED NAVIGATION
+// NAVIGATION
 
 .tabletmob-nav {
 	display: none;
@@ -1091,8 +1101,6 @@ hr.line {
 	a.pull {
 		@media @tablet {
 			top: auto; 
-            top: auto; 
-			top: auto; 
 			margin: 0px auto;
 			left: 20px;
 			z-index: 99999;
@@ -1112,8 +1120,6 @@ hr.line {
 		&:after {
 			@media @tablet {
 				content: "";
-				background: image('/images/nav-icon.png') no-repeat; 
-                background: image('/images/nav-icon.png') no-repeat; 
 				background: image('/images/nav-icon.png') no-repeat; 
 				width: 19px;
 				height: 20px;
@@ -2249,8 +2255,6 @@ footer.bk-footer {
 			margin: 0px 0px 30px 0px;
 		}
 
-		tr:first-child { 
-        tr:first-child { 
 		tr:first-child { 
 			outline: 1px solid darken(@color-swatch1, 10%);
 			font-family: @font-swatch4-font-family;
