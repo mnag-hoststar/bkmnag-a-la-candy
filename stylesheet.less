@@ -896,6 +896,8 @@ header.bk-header {
 			}
 		}
 	}
+	
+	.language-selector.language-selector--dark &,
 	.language-selector.language-selector--dropdown.language-selector--dark & {
 		background-color: @color-swatch6;
 		
@@ -1638,6 +1640,7 @@ button.btn,
 a.contentgroup__link {
 	background-color: fade(@color-swatch3, 80%);
 	color: darken(@font-swatch7-color, 10%);
+	min-height: 45px;
 
 	.style--light & {
 		background-color: @color--accent;
@@ -1682,6 +1685,7 @@ a.contentgroup__link {
 		font-weight: @font-swatch6-font-weight;
 		line-height: @font-swatch7-line-height;
 		letter-spacing: @font-swatch7-letter-spacing;
+		font-size: @font-swatch7-font-size; 
 		color: darken(@font-swatch7-color, 10%);
 		background-color: fade(@color-swatch3, 80%);
 		padding: 10px 10px 10px 40px;
@@ -1740,15 +1744,6 @@ a.contentgroup__link {
 
 // FORM
 
-.widget .form {
-	.option-item--radio,
-	.option-item--checkbox {
-		label {
-			word-break: break-word;
-		}
-	}
-}
-
 label {
 	font-family: @font-swatch4-font-family;
 	font-size: @font-swatch5-font-size;
@@ -1763,6 +1758,7 @@ select,
 textarea {
 	padding: 0 10px;
 	border: 0;
+	min-height: 45px;
 	background-color: fade(@color-swatch2, 10%);
 	border: 0;
 	font-family: @font-swatch5-font-family;
@@ -1810,6 +1806,7 @@ select {
 	background-repeat: no-repeat;
 	background-position: right 0.5em center;
 	background-size: 1.2em;
+	min-height: 40px;
 
 	&::-ms-expand {
 		display: none;
@@ -1853,6 +1850,10 @@ button.btn,
 	padding: 10px 25px;
 	border: 0;
 	border-radius: 0;
+	-webkit-transition: background-color 0.15s ease-in-out;
+	-moz-transition: background-color 0.15s ease-in-out;
+	-o-transition: background-color 0.15s ease-in-out;
+	transition: background-color 0.15s ease-in-out;
 
 	&:hover {
 	   background-color: @color-swatch3;
@@ -2236,6 +2237,11 @@ footer.bk-footer {
 		}
 
 		span.inner {
+			@media @mobile {
+				left: 3px;
+				right: 3px;
+			}
+
 			.title,
 			.description {
 				color: @color-swatch1;
