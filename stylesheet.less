@@ -1863,6 +1863,15 @@ button.btn,
 	}
 }
 
+// DROPBOX BUTTON
+
+.widget.dropbox button:hover {
+	background-image: image('/images/dropbox-icon.png');
+	background-repeat: no-repeat;
+	background-position: 10px;
+	background-size: 22px;
+}
+
 // Privacy Checkboxes
 
 .widget.advancedcontactform .form-group.advancedcontactform__form-group--terms,
@@ -1898,26 +1907,71 @@ button.btn,
 	}
 }
 
-// SIGN UP FORM
+// SIGN UP AND BLOG SEARCH
 
-.signupform fieldset button {
-    padding: 10px 25px;
-    width: 33%;
+.signupform form .form-group,
+form.blog-search-form .form-group {
+	display: flex;
 
-    @media @mobile {
-        width: 100%;
-    }
-}
+	@media @mobile {
+		display: block;
+	}
 
-.signupform fieldset input {
-    width: 65%;
-    border: 0;
-    text-indent: 12px;
-    
-    @media @mobile {
-        margin-bottom: 20px;
-        width: 100%;
-    }
+	.responsivecolumns & {
+		display: block;
+	}
+
+	label {
+		display: none;
+		margin-bottom: 0.5em;
+	
+		@media @mobile {
+			display: inherit;
+		}
+
+		.responsivecolumns & {
+			display: inherit;
+		}
+	}
+	
+	input {
+		border: 0;
+		-webkit-appearance: none;
+		width: auto;
+		flex-grow: 1;
+	
+		@media @mobile {
+			margin-bottom: 10px;
+			width: 100%;
+		}
+
+		.responsivecolumns & {
+			margin-bottom: 10px;
+			width: 100%;
+		}
+	}
+	
+	button {
+		font-family: @font-swatch7-font-family;
+		font-size: @font-swatch7-font-size;
+		font-weight: @font-swatch7-font-weight;
+		padding: 9px 25px;
+		width: 30%;
+		border: 0;
+		cursor: pointer;
+	
+		@media @tablet {
+			width: 40%;
+		}
+	
+		@media @mobile {
+			width: 100%;
+		}
+
+		.responsivecolumns & {
+			width: 100%;
+		}
+	}
 }
 
 // PROFILE
@@ -1948,55 +2002,8 @@ button.btn,
 	}
 }
 
-// BLOG SEARCH
-
-.blogsearch form button,
-.blog-search-submit-button {
-    font-family: @font-swatch7-font-family;
-    font-size: @font-swatch7-font-size;
-    font-weight:@font-swatch7-font-weight;
-    padding: 9px 25px;
-    height: 48px;
-    width: 30%;
-    border: 0;
-    cursor: pointer;
-
-    @media @tablet {
-        width: 38%;
-    }
-
-    @media @mobile {
-        width: 100%;
-    }
-}
-
-.blogsearch label {
-    display: none;
-
-    @media @mobile {
-        display: inherit;
-        margin-bottom: 10px;
-    }
-}
-
-.blog-search-input {
-    width: 68%;
-    border: 0;
-    height: 49px;
-    -webkit-appearance: none;
-
-    @media @tablet {
-        width: 60%;
-    }
-
-    @media @mobile {
-        margin-bottom: 20px;
-        width: 100%;
-    }
-}
-
 .blog-post-sharing {
-    margin-top: 20px;
+	margin-top: 20px;
 }
 
 // PAYPAL BUTTON
@@ -2033,24 +2040,6 @@ button.btn,
 	.twitter-content span.bk-full-name {
 		line-height: 40px;
 	}
-}
-
-// DROPBOX BUTTON
-
-.widget.dropbox button:hover {
-    background-image: image('/images/dropbox-icon.png');
-    background-repeat: no-repeat;
-    background-position: 10px;
-    background-size: 22px;
-}
-
-.widget.contactform form fieldset button.btn:hover, button.btn:hover, .signupform fieldset button:hover, 
-.widget.profile form button:hover, .blogsearch form button:hover, .widget.paypalbuynow .widget.button.paypal:hover, 
-.widget.dropbox button:hover, .widget.button button:hover   {
-    -webkit-transition: background-color 0.15s ease-in-out;
-    -moz-transition: background-color 0.15s ease-in-out;
-    -o-transition: background-color 0.15s ease-in-out;
-    transition: background-color 0.15s ease-in-out;
 }
 
 // FOOTER
