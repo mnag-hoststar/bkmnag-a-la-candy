@@ -182,10 +182,10 @@ label,
 select,
 blockquote,
 blockquote:before {
-	font-family:@font-swatch5-font-family;
+	font-family: @font-swatch5-font-family;
 	font-weight: @font-swatch5-font-weight;
-	color:@font-swatch5-color;
-	line-height:@font-swatch5-line-height;
+	color: @font-swatch5-color;
+	line-height: @font-swatch5-line-height;
 	letter-spacing: @font-swatch5-letter-spacing;
 	font-size: @font-swatch5-font-size;
 
@@ -204,10 +204,9 @@ blockquote:before {
 
 // Normal Text
 
-.widget {
+.widget, .widget.in-editing {
 	p, span, small, pre, code,
-	table, th, td,
-	&.content {
+	table, th, td, .content {
 		color: @font-swatch5-color;
 	
 		.style--light & {
@@ -222,6 +221,12 @@ blockquote:before {
 			color: @contrast--dark;
 		}
 	}
+}
+
+.widget .content,
+.widget.in-editing .content {
+	font-size: @font-swatch5-font-size !important;
+	line-height: @font-swatch5-line-height !important;
 }
 
 // Preformatted and Code Text
