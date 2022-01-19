@@ -1704,8 +1704,8 @@ textarea {
 	padding: 0 10px;
 	border: 0;
 	min-height: 45px;
-	background-color: fade(@color-swatch2, 10%);
 	border: 0;
+	background-color: fade(@color-swatch2, 10%);
 	font-family: @font-swatch5-font-family;
 	font-size: @font-swatch5-font-size;
 	color: @font-swatch5-color;
@@ -1935,90 +1935,12 @@ footer.bk-footer .widget.profile .form-group.profile__form-group.profile__form-g
 	}
 }
 
-// Registration Form
+// CONTACT FORM
 
-.widget.userregistration {
-	fieldset {
-		margin: 0 auto;
-		padding: 0;
-		border: none;
-		max-width: 400px;
-		
-		@media @mobile {
-			max-width: none;
-		}
-
-		.responsivecolumns & {
-			max-width: none;
-		}
-
-		input {
-			width: 100%;
-			box-sizing: border-box;
-		}
-
-		.error {
-			padding: 20px 0 0;
-
-			&[style*="display: block"] {
-				padding: 20px 0;
-			}
-
-			&[style*="display: none"] {
-				display: block !important;
-			}
-		}
-	}
-}
-
-// PLACEHOLDER CSS
-
-::-webkit-input-placeholder {
-	color: @color-swatch5;
-}
-:-moz-placeholder {
-	color: @color-swatch5;
-}
-::-moz-placeholder {
-	color: @color-swatch5;
-}
-:-ms-input-placeholder {
-	color: @color-swatch5;
-}
-
-button.btn,
-.widget.ecomcheckout .checkout-order-button,
-.widget.ecombasket .ecombasket-pull, 
-.contactform button,
-.contactform button.btn, 
-.advancedcontactform button,
-.advancedcontactform button.btn {
-	color: darken(@font-swatch7-color, 10%);
-	background-color: fade(@color-swatch3, 80%);
-	padding: 10px 25px;
-	border: 0;
-	border-radius: 0;
-	-webkit-transition: background-color 0.15s ease-in-out;
-	-moz-transition: background-color 0.15s ease-in-out;
-	-o-transition: background-color 0.15s ease-in-out;
-	transition: background-color 0.15s ease-in-out;
-
-	&:hover {
-	   background-color: @color-swatch3;
-	}
-
+.widget.contactform form {
 	@media @mobile {
-		width: 100%;
+		padding-top: 10px;
 	}
-}
-
-// DROPBOX BUTTON
-
-.widget.dropbox button:hover {
-	background-image: image('/images/dropbox-icon.png');
-	background-repeat: no-repeat;
-	background-position: 10px;
-	background-size: 22px;
 }
 
 // SIGN UP AND BLOG SEARCH
@@ -2026,6 +1948,8 @@ button.btn,
 .signupform form .form-group,
 form.blog-search-form .form-group {
 	display: flex;
+	flex-wrap: wrap;
+    align-items: center;
 
 	@media @mobile {
 		display: block;
@@ -2066,13 +1990,7 @@ form.blog-search-form .form-group {
 	}
 	
 	button {
-		font-family: @font-swatch7-font-family;
-		font-size: @font-swatch7-font-size;
-		font-weight: @font-swatch7-font-weight;
-		padding: 9px 25px;
 		width: 30%;
-		border: 0;
-		cursor: pointer;
 	
 		@media @tablet {
 			width: 40%;
@@ -2084,6 +2002,107 @@ form.blog-search-form .form-group {
 
 		.responsivecolumns & {
 			width: 100%;
+		}
+	}
+}
+
+// Registration Form
+
+.widget.userregistration {
+	fieldset {
+		margin: 0 auto;
+		padding: 0;
+		border: none;
+		max-width: 400px;
+		
+		@media @mobile {
+			max-width: none;
+		}
+
+		.responsivecolumns & {
+			max-width: none;
+		}
+
+		input {
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		.error {
+			padding: 20px 0 0;
+
+			&[style*="display: block"] {
+				padding: 20px 0;
+			}
+
+			&[style*="display: none"] {
+				display: block !important;
+			}
+		}
+	}
+}
+
+// PLACEHOLDER CSS
+input,
+input:focus {
+	&::-webkit-input-placeholder {
+		color: fade(@font-swatch5-color, 40%);
+	
+		.style--light & {
+			color: fade(@contrast--light, 40%);
+		}
+	
+		.style--accent & {
+			color: fade(@contrast--accent, 40%);
+		}
+	
+		.style--dark & {
+			color: fade(@contrast--dark, 40%);
+		}
+	}
+	&:-moz-placeholder {
+		color: fade(@font-swatch5-color, 40%);
+	
+		.style--light & {
+			color: fade(@contrast--light, 40%);
+		}
+	
+		.style--accent & {
+			color: fade(@contrast--accent, 40%);
+		}
+	
+		.style--dark & {
+			color: fade(@contrast--dark, 40%);
+		}
+	}
+	&::-moz-placeholder {
+		color: fade(@font-swatch5-color, 40%);
+	
+		.style--light & {
+			color: fade(@contrast--light, 40%);
+		}
+	
+		.style--accent & {
+			color: fade(@contrast--accent, 40%);
+		}
+	
+		.style--dark & {
+			color: fade(@contrast--dark, 40%);
+		}
+	}
+	&:-ms-input-placeholder {
+		color: fade(@font-swatch5-color, 40%);
+	
+		.style--light & {
+			color: fade(@contrast--light, 40%);
+		}
+	
+		.style--accent & {
+			color: fade(@contrast--accent, 40%);
+		}
+	
+		.style--dark & {
+			color: fade(@contrast--dark, 40%);
 		}
 	}
 }
@@ -2134,6 +2153,7 @@ form.blog-search-form .form-group {
 	display: inline-block;
 	padding: 10px 10px 10px 40px;
 }
+// TWEETS
 
 .widget.twitter {
 	ul {
@@ -2142,17 +2162,46 @@ form.blog-search-form .form-group {
 		border-radius: 3px;
 
 		li {
-			padding-bottom: 20px;
-		}
+			padding-bottom: 40px;
+
+			&:last-child {
+				padding-bottom: 20px;
+			}
 		
-		a {
-			font-weight: 400;
-			font-size: @font-swatch5-font-size;
+			a {
+				font-weight: 400;
+				font-size: @font-swatch5-font-size;
+				color: @font-swatch5-color;
+			
+				.style--light & {
+					color: @contrast--light;
+				}
+			
+				.style--accent & {
+					color: @contrast--accent;
+				}
+			
+				.style--dark & {
+					color: @contrast--dark;
+				}
+			}
+
+			p {
+				display: block;
+				padding-bottom: 0;
+			}
 		}
 	}
 	
-	.twitter-content span.bk-full-name {
-		line-height: 40px;
+	.twitter-content {
+		> a:first-child {
+			display: block;
+		}
+
+		span.bk-full-name {
+			display: block;
+			height: 60px;
+		}
 	}
 }
 
@@ -2355,6 +2404,28 @@ footer.bk-footer {
 				right: 3px;
 			}
 
+			.image-data {
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: column;
+				justify-content: center;
+				opacity: 0;
+				padding: 25px;
+				background-color: fade(@color-swatch3, 50%);
+				-webkit-transition: all 0.4s ease-out;
+				-moz-transition: all 0.4s ease-out;
+				-o-transition: all 0.4s ease-out;
+				transition: all 0.4s ease-out;
+		
+				&:hover {
+					opacity: 1;
+				}
+			}
+
+			&:hover .image-data {
+				display: flex;
+			}
+
 			.title,
 			.description {
 				color: @color-swatch1;
@@ -2453,6 +2524,7 @@ footer.bk-footer {
 			.form-group.productlist-search {
 				display: flex;
 				flex-wrap: wrap;
+				align-items: center;
 
 				input {
 					flex-grow: 1;
@@ -2503,7 +2575,7 @@ footer.bk-footer {
 }
 
 .widget.ecomproductslist .ecom-productslist-product,
-.widget.ecomfeaturedproducts .ecom-featuredproducts-product {
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product {
 	display: block;
 	float: left;
 	width: 100%/3;
@@ -2523,6 +2595,12 @@ footer.bk-footer {
 	.responsivecolumns & {
 		width: 100%;
 	}
+
+	a {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+	}
 }
 
 .widget.ecomproductslist .ecom-productslist-image-wrap,
@@ -2534,14 +2612,30 @@ footer.bk-footer {
 
 .widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product .ecom-featuredproducts-image-wrap {
 	background-color: fade(@color-swatch2, 10%);
+	background-position: center;
 	margin-bottom: 20px;
 }
 
-.ecom-featuredproducts-wrap,
-.ecom-productslist-product,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap,
+.widget.ecomproductslist .ecom-productslist-product,
 .ecom-product {
 	h2 {
 		font-size: @font-swatch3-font-size;
+		border-bottom: 1px solid @color-swatch2;
+		padding-bottom: 12px;
+		margin-bottom: 20px;
+	
+		.style--light & {
+			border-color: darken(@color--light, 15%);
+		}
+	
+		.style--accent & {
+			border-color: darken(@color--accent, 15%);
+		}
+	
+		.style--dark & {
+			border-color: lighten(@color--dark, 15%);
+		}
 	}
 }
 
