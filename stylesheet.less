@@ -246,7 +246,7 @@ blockquote {
 	margin: 10px 0;
 
 	.style--light & {
-		background-color: fade(@contrast--light, 10%);
+		background-color: fade(@color--accent, 10%);
 	}
 
 	.style--accent & {
@@ -254,13 +254,27 @@ blockquote {
 	}
 
 	.style--dark & {
-		background-color: fade(@contrast--dark, 10%);
+		background-color: fade(@color--accent, 10%);
 	}
 
 	&:before {
 		left: 10px;
-		color: @color-swatch5;
+		color: @font-swatch5-color;
 		font-size: @font-swatch1-font-size;
+
+		.style--light & {
+			border-color: @contrast--light;
+		}
+	
+		.style--accent & {
+			border-color: @contrast--accent;
+		}
+	
+		.style--dark & {
+			border-color: @contrast--dark;
+		}
+	}
+}
 	}
 }
 
