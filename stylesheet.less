@@ -1614,53 +1614,39 @@ header.bk-header {
 
 // BUTTON
 
-.widget.tweet a,
-.widget.button .btn {
-	margin: 0.5em 0;
-	padding: 10px 15px;
-}
-
-.btn {
-	font-family: @font-swatch7-font-family;
-	font-size: @font-swatch7-font-size;
-	font-weight:@font-swatch7-font-weight;
-	padding: 10px 15px;
-	text-decoration: none;
-}
-
 .btn,
 button.btn,
-.widget.button button,
-.contactform button,
-.contactform button.btn,
-.signupform fieldset button,
-.signupform fieldset button.btn,
-.advancedcontactform button,
-.advancedcontactform button.btn,
-.userregistration fieldset .userregistrationbtn,
+button.button,
+.widget.tweet a,
+.widget.dropbox button,
 .widget.profile form button,
 .widget.paypalbuynow .widget.button.paypal,
-.widget.dropbox button,
-.blog-search-submit-button,
-.blog-list-footer .paginate-older,
-.ecom-productslist-products .productlist-search .btn,
-.widget.ecomproduct .ecom-product .btn,
-.widget.ecomcheckout .checkout-order-button,
-.widget.ecombasket .ecombasket-pull,
-.widget.ecombasket .ecombasket-list-container .ecombasket-checkout-wrap .ecombasket-checkout-link,
-.widget.ecombasketsummary .basket-summary-continue-shopping,
-.widget.ecombasketsummary .basket-summary-submit,
-.widget.feature .feature-bgimg .content button,
-.widget.tweet a,
-.widget.socialicons span a,
 .widget.clicktocall a,
-.blog-post-more-link a,
-.widget.ecomcategorieslist ul li a,
+.widget.feature .feature-bgimg .content button,
+.userregistration fieldset .userregistrationbtn,
+.widget.socialicons span a,
 .widget.yelpreview .review-body .review-link a,
-a.contentgroup__link {
-	background-color: fade(@color-swatch3, 80%);
-	color: darken(@font-swatch7-color, 10%);
+.blog-post-more-link a,
+form.blog-search-form .form-group button {
+	display: inline-block;
+	margin: 0.5em 0;
+	padding: 11px 20px;
+	border-radius: 0;
+	border: none;
 	min-height: 45px;
+	background-color: fade(@color-swatch3, 80%);
+	font-family: @font-swatch7-font-family;
+	font-weight: @font-swatch6-font-weight;
+	line-height: @font-swatch7-line-height;
+	letter-spacing: @font-swatch7-letter-spacing;
+	font-size: @font-swatch7-font-size;
+	color: darken(@font-swatch7-color, 10%);
+	text-decoration: none;
+	text-align: center;
+	-webkit-transition: background-color 0.15s ease-in-out;
+	-moz-transition: background-color 0.15s ease-in-out;
+	-o-transition: background-color 0.15s ease-in-out;
+	transition: background-color 0.15s ease-in-out;
 
 	.style--light & {
 		background-color: @color--accent;
