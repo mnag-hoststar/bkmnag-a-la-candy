@@ -1493,22 +1493,30 @@ header.bk-header {
 	}
 
 	.slideshow-widget {
-		.btn-play {
+		.btn-play,
+		.btn-prev,
+		.btn-next {
+			position: absolute;
+			opacity: 1;
+			top: 50%;
 			-webkit-border-radius: 50%;
 			-moz-border-radius: 50%;
 			border-radius: 50%;
+			border: none;
 			background-color: fade(@color-swatch3, 80%);
 			width: 60px;
 			height: 60px;
+			margin-top: -30px;
+			-webkit-transition: background-color 0.15s ease-in-out;
+			-moz-transition: background-color 0.15s ease-in-out;
+			-o-transition: background-color 0.15s ease-in-out;
+			transition: background-color 0.15s ease-in-out;
+			font-size: 0;
+			line-height: 0;
 
 			@media @tablet {
 				width: 50px;
 				height: 50px;
-			}
-
-			@media @mobile {
-				width: 40px;
-				height: 40px;
 			}
 
 			&:hover {
@@ -1516,49 +1524,69 @@ header.bk-header {
 			}
 
 			&:after {
+				content: '';
+				display: block;
 				color: @color-swatch1;
-				font-size: 16px;
-				line-height: 60px;
-				top: 2px;
+				background: transparent;
+				top: 50%;
+				left: 50%;
+				margin-top: -10px;
+				margin-left: -5px;
+			}
+		}
 
-				@media @tablet {
-					line-height: 50px;
-					font-size: 14px;
-				}
+		.btn-play {
+    		left: 50%;
+			margin-left: -30px;
 
-				@media @mobile {
-					line-height: 40px;
-					font-size: 12px;
-				}
+			&:after,
+			&.pause:after {
+				height: 0;
+				width: 0;
+				border: 10px solid transparent;
+				border-left: 15px solid @color-swatch1;
+			}
+
+			&.pause:after {
+				height: 18px;
+				width: 6px;
+				margin-top: -9px;
+				margin-left: -6px;
+				border: none;
+				border-left: 3px solid @color-swatch1;
+				border-right: 3px solid @color-swatch1;
 			}
 		}
 
 		.btn-prev,
 		.btn-next {
-			font-size: 0;
-			z-index: 11;
-			opacity: 0.5;
-			width: 30px;
-			height: 30px;
-		}
-		
-		.btn-prev {
-			background: image('/images/slideshow-arrow-left.png') no-repeat center left;
-		
-			.svg & {
-				left: 10px;
-				background: image('/images/slideshow-arrow-left.svg') no-repeat center left;
-				background-size: contain;
+			&:after {
+				border: 3px solid @color-swatch1;
+				transform: rotate(45deg);
+				margin-top: -7px;
+				margin-left: auto;
+				left: auto;
+				right: auto;
+				width: 12px;
+				height: 12px;
 			}
 		}
-		
+
+		.btn-prev {
+			&:after {
+				border-top: transparent;
+				border-right: transparent;
+				margin-left: -5px;
+				left: 50%;
+			}
+		}
+
 		.btn-next {
-			background: image('/images/slideshow-arrow-right.png') no-repeat center right;
-		
-			.svg & {
-				right: 10px;
-				background: image('/images/slideshow-arrow-right.svg') no-repeat center right;
-				background-size: contain;
+			&:after {
+				border-bottom: transparent;
+				border-left: transparent;
+				margin-right: -5px;
+				right: 50%;
 			}
 		}
 	}
