@@ -14,6 +14,27 @@
 	appearance: @appearance;
 }
 
+// BASEKIT ELEMENTS
+
+.top-level-overlay button.top-level-overlay__delete-button,
+.row-overlay__delete-button,
+.top-level-overlay button.top-level-overlay__arrangement-button--up,
+.row-overlay__arrangement-button--up,
+.top-level-overlay button.top-level-overlay__arrangement-button--down,
+.row-overlay__arrangement-button--down, .row-overlay__edit-button {
+	background: transparent !important;
+}
+
+.row-overlay__edit-button {
+	background: #fff !important;
+}
+
+.is-dropdown-open .row-overlay__edit-button .row-overlay__edit-button-icon,
+.is-setting-open .row-overlay__edit-button .row-overlay__edit-button-icon {
+	left: auto !important;
+    top: auto !important;
+}
+
 // MAIN
 
 body {
@@ -1179,14 +1200,6 @@ header.bk-header {
 	}
 }
 
-// MENU SECTIONS NAVIGATION
-
-.menu-container {
-	.bk-pt-default & {
-		background-color: fadeout(@color-swatch4, 95%);   
-	}
-}
-
 // NAVIGATION
 
 .tabletmob-nav {
@@ -1751,6 +1764,20 @@ form.blog-search-form .form-group button,
     background-position: 1.25em center;
 }
 
+.widget.filedownload .file-name__label {
+	margin-left: 0.5em;
+
+	@media @mobile {
+		display: block;
+		margin: 1em 0;
+	}
+	
+	.responsivecolumns & {
+		display: block;
+		margin: 1em 0;
+	}
+}
+
 // Social Icons
 
 .widget.socialicons,
@@ -1815,6 +1842,7 @@ label,
 	line-height: @font-swatch4-line-height;
 	color: @font-swatch4-color;
 	letter-spacing: @font-swatch4-letter-spacing;
+	word-break: break-word;
 
 	.contactform &,
 	.advancedcontactform &,
@@ -1866,15 +1894,18 @@ textarea {
 
 .select-wrap {
 	position: relative;
-	max-width: 50%;
 
-	@media @tablet {
-		max-width: 100%;
-	}
+    .advancedcontactform & {
+        max-width: 50%;
 
-	.responsivecolumns & {
-		max-width: 100%;
-	}
+        @media @tablet {
+            max-width: 100%;
+        }
+    
+        .responsivecolumns & {
+            max-width: 100%;
+        }
+    }
 
 	&:before {
 		content: '';
@@ -3063,144 +3094,6 @@ footer.bk-footer {
 	}
 }
 
-// MENU
-
-.widget.menu {
-	@media @mobile {
-		margin-top: 0px;
-	}
-
-	.main {
-		@media @tablet {
-			background-color: transparent;
-		}
-
-		@media @mobile {
-			background-color: transparent;
-		}
-
-		.menu-header,
-		.menu-subsection-header {
-			h1,
-			h2 {
-				@media @mobile {
-					padding: 0;
-				}
-
-				&:before,
-				&:after {
-					@media @tablet {
-						display: none;
-					}
-				}
-			}
-		}
-	}
-
-	.wrapper {
-		margin: 0;
-		max-width: 100%;
-		width: auto;
-	}
-
-	.menu-subsection {
-		margin: 0;
-		padding: 0;
-
-		&-promoted {
-			padding: 2em 2em 0;
-			margin-bottom: 2em;
-			position: relative;
-			background-color: fadeout(@color-swatch4, 95%);
-		}
-
-		&-name {
-			@media @mobile {
-				font-size: bkscale(@font-swatch2-font-size,0.6);
-				line-height: bkscale(@font-swatch2-line-height,0.6);
-			}
-		}
-	}
-}
-
-.widget.menusections {
-	@media @tablet {
-		min-height: 0;
-	}
-	
-	.bk-pt-default & {
-		margin-top: 40px;
-
-		@media @tablet {
-			margin-top: 0;
-		}
-	}
-
-	ul {
-		@media @tablet {
-			display: block;
-		}
-
-		@media @mobile {
-			background-color: transparent;
-		}
-	}
-	
-	li {
-		@media @tablet {
-			border-bottom: 0;
-			padding: 0;
-			padding: 5px 0px;
-		}
-	}
-	
-	a.menu-pull {
-		@media @tablet {
-			display: none;
-		}
-	}
-}
-
-.menu-container {
-	@media @tablet {
-		background-color: transparent;
-	}
-}
-
-.menu-item-image-wrap {
-	height: 200px;
-	margin: 1em 0;
-	background-repeat: no-repeat;
-	background-position: center;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-
-	img {
-		display: none;
-		border: none;
-	}
-}
-
-.menu-item.menu-item-promoted {
-	padding: 1.5em!important;
-	background-color: fadeout(@color-swatch4, 95%);
-}
-
-.main .menu-items li .inner-item .menu-section-item-dietary-props .dietary-icon {
-	padding: 3px;
-	background-color: fade(@color-swatch3, 80%);
-	color: @font-swatch7-color;
-	padding: 3px 10px;
-}
-
-#menu-section-373,
-#menu-section-374 {
-	width: 100%;
-	margin: 0;
-}
-
 // PRINT OVERRIDE
 
 .print-mixin {
@@ -3212,22 +3105,6 @@ footer.bk-footer {
 
 	.companyheader {
 		padding:0px;
-	}
-
-	.menu-container {
-		display:none;
-	}
-
-	.menu-info {
-		margin:0px;
-	}
-
-	.widget.menu .main.wrapper {
-		page-break-before:always;
-	}
-
-	.widget.menu .menu-item-image-wrap {
-		height:150px;
 	}
 }
 
