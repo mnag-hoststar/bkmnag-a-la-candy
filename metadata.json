@@ -1,8 +1,8 @@
 {
-    "name":"a la Candy",
-    "thumbnail":"thumbnail.png",
-    "screenshot":"alacandy-screenshot.jpg",
-    "templateType":"standard",
+    "name": "a la Candy",
+    "thumbnail": "images/thumbnail.png",
+    "screenshot": "images/screenshot.jpg",
+    "templateType": "standard",
     "versionTenCompatible": 1,
     "pageTypes": ["home"],
     "tags": {
