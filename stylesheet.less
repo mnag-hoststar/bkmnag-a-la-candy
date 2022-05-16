@@ -14,7 +14,7 @@
 	appearance: @appearance;
 }
 
-// BASEKIT ELEMENTS
+// Basekit Elements
 
 .top-level-overlay button.top-level-overlay__delete-button,
 .row-overlay__delete-button,
@@ -172,21 +172,21 @@ blockquote,
 blockquote:before {
 	font-family: @font-swatch5-font-family;
 	font-weight: @font-swatch5-font-weight;
-	color: @font-swatch5-color;
 	line-height: @font-swatch5-line-height;
 	letter-spacing: @font-swatch5-letter-spacing;
 	font-size: @font-swatch5-font-size;
+	color: @font-swatch5-color;
 
 	.style--light & {
 		color: @font-swatch5-color;
 	}
 
 	.style--accent & {
-		color: fade(@contrast--accent, 80%);
+		color: @contrast--accent;
 	}
 
 	.style--dark & {
-		color: fade(@contrast--dark, 80%);
+		color: @contrast--dark;
 	}
 }
 
@@ -224,20 +224,20 @@ pre, code {
 	padding: 0.5em 1em;
 	border: none;
 	.border-radius(0);
-	background-color: darken(@color-swatch1, 10%);
 	overflow: auto;
 	font-family: monospace;
+	background-color: fade(@color-swatch2, 20%);
 
 	.style--light & {
-		background-color: darken(@color-swatch1, 10%);
+		background-color: fade(@color-swatch2, 20%);
 	}
 
 	.style--accent & {
-		background-color: fade(@contrast--accent, 10%);
+		background-color: fade(@contrast--accent, 20%);
 	}
 
 	.style--dark & {
-		background-color: fade(@contrast--dark, 10%);
+		background-color: fade(@color--accent, 20%);
 	}
 }
 
@@ -260,20 +260,20 @@ code {
 // Blockquote
 
 blockquote {
-	background-color: fade(@color-swatch2, 10%);
 	font-style: italic;
 	margin: 10px 0;
+	background-color: fade(@color-swatch2, 20%);
 
 	.style--light & {
-		background-color: fade(@color-swatch2, 10%);
+		background-color: fade(@color-swatch2, 20%);
 	}
 
 	.style--accent & {
-		background-color: fade(@contrast--accent, 10%);
+		background-color: fade(@contrast--accent, 20%);
 	}
 
 	.style--dark & {
-		background-color: fade(@color--accent, 10%);
+		background-color: fade(@color--accent, 20%);
 	}
 
 	&:before {
@@ -292,6 +292,10 @@ blockquote {
 		.style--dark & {
 			color: @contrast--dark;
 		}
+	}
+
+	&:after {
+		display: none;
 	}
 }
 
@@ -897,13 +901,13 @@ header.bk-header {
 		background-color: @color-swatch6;
 		
 		.language-selector__link:hover {
-			background-color: fade(darken(@color-swatch6, 10%), 80%);
+			background-color: fade(darken(@color-swatch6, 20%), 80%);
 		}
 		
 		&.language-selector__item--current {
 			.language-selector__link,
 			.language-selector__link:hover {
-				background-color: fade(darken(@color-swatch6, 10%), 80%);
+				background-color: fade(darken(@color-swatch6, 20%), 80%);
 			}
 		}
 	}
@@ -1117,7 +1121,7 @@ header.bk-header {
 				margin: 0px auto;
 				display: table;
 				padding: 10px 20px;
-				color: darken(@font-swatch7-color, 10%);
+				color: darken(@font-swatch7-color, 20%);
 				background-color: fade(@color-swatch7, 70%);
 
 				@media @tablet {
@@ -1146,7 +1150,7 @@ header.bk-header {
 	.featureimage {
 		position: relative;
 		min-height: 250px;
-		background-color: lighten(@color-swatch3,10%);
+		background-color: lighten(@color-swatch3, 20%);
 		width: 100%;
 		height: 100%;
 		
@@ -1205,7 +1209,7 @@ header.bk-header {
 
 .tabletmob-nav {
 	display: none;
-	background-color: darken(@color-swatch4,10%);
+	background-color: darken(@color-swatch4, 20%);
 	
 	@media @tablet {
 		display: inline-block;
@@ -1267,7 +1271,7 @@ header.bk-header {
 		a.pull {
 			@media @tablet {
 				z-index: 99999;
-				top: auto; 
+				top: 0; 
 				left: 20px;
 				margin: 0px auto;
 				width: 20px;
@@ -1397,10 +1401,13 @@ header.bk-header {
 						z-index: 100;
 						display: none;
 						position: absolute;
+						left: auto;
+						right: 20px;
 						background-color: fade(@color-swatch4, 70%);
 						border: 1px solid @color-swatch1;
 						margin: 12px 0 0;
 						padding: 10px 0;
+						min-width: 250px;
 						max-width: 400px;
 				
 						@media @tablet {
@@ -1445,7 +1452,6 @@ header.bk-header {
 			&.align-right li.folder {
 				@media @tablet {
 					background-position: 12px center;
-					padding-right: 0;
 				}
 			}
 		}
@@ -1489,20 +1495,24 @@ header.bk-header {
 	}
 
 	.title {
-		padding: 12px 10px 5px;
+		padding: 10px 12px;
 		line-height: 1.1em;
 		font-family: @font-swatch4-font-family;
 		font-size: 20px;
 	}
 	
 	.description {
-		padding: 5px 10px 10px;
+		padding: 10px 12px;
 		line-height: 1.2em;
 		font-size: 13px;
 
 		@media @mobile {
 			display: block;
 		}
+	}
+
+	.title + .description {
+		margin-top: -12px;
 	}
 
 	.content-wrapper {
@@ -1653,7 +1663,7 @@ header.bk-header {
 	}
 	
 	.crop .image-wrapper {
-		background-color: fade(@color-swatch2, 10%);
+		background-color: fade(@color-swatch2, 20%);
 	}
 }
 
@@ -1668,6 +1678,7 @@ button.button,
 .advancedcontactform button.btn,
 .widget.tweet a,
 .widget.clicktocall a,
+.widget.clicktocall a:hover,
 .widget.dropbox button,
 .widget.filedownload button.btn,
 .widget.paypalbuynow .widget.button.paypal,
@@ -1684,14 +1695,14 @@ form.blog-search-form .form-group button,
 	border-radius: 0;
 	border: none;
 	min-height: 45px;
-	height: auto !important;
+	height: auto;
 	background-color: fade(@color-swatch3, 80%);
 	font-family: @font-swatch7-font-family;
 	font-weight: @font-swatch6-font-weight;
 	line-height: @font-swatch7-line-height;
 	letter-spacing: @font-swatch7-letter-spacing;
 	font-size: @font-swatch7-font-size;
-	color: darken(@font-swatch7-color, 10%);
+	color: darken(@font-swatch7-color, 20%);
 	text-decoration: none;
 	text-align: center;
 	-webkit-transition: background-color 0.15s ease-in-out;
@@ -1701,7 +1712,7 @@ form.blog-search-form .form-group button,
 
 	.style--light & {
 		background-color: fade(@color-swatch3, 80%);
-		color: darken(@font-swatch7-color, 10%);
+		color: darken(@font-swatch7-color, 20%);
 	}
 
 	.style--accent & {
@@ -1725,12 +1736,12 @@ form.blog-search-form .form-group button,
 		}
 
 		.style--accent & {
-			background-color: darken(@color--dark, 10%);
+			background-color: darken(@color--dark, 20%);
 			color: @contrast--dark;
 		}
 
 		.style--dark & {
-			background-color: darken(@color--accent, 10%);
+			background-color: darken(@color--accent, 20%);
 			color: @contrast--accent;
 		}
 	}
@@ -1827,7 +1838,7 @@ form.blog-search-form .form-group button,
 }
 
 .widget.profile .bk-profile-socialicons span a {
-	color: darken(@font-swatch7-color, 10%);
+	color: darken(@font-swatch7-color, 20%);
 	background-color: fade(@color-swatch3, 90%);
 
 	&:hover {
@@ -1867,8 +1878,9 @@ textarea {
 	padding: 0 10px;
 	border: 0;
 	min-height: 45px;
+    height: auto !important;
 	border: 0;
-	background-color: fade(@color-swatch2, 10%);
+	background-color: fade(@color-swatch2, 40%);
 	font-family: @font-swatch5-font-family;
 	font-size: @font-swatch5-font-size;
 	color: @font-swatch5-color;
@@ -1908,18 +1920,6 @@ textarea {
 		right: 0;
 		display: block;
 		position: absolute;
-	
-		.style--light & {
-			background: transparent;
-		}
-	
-		.style--accent & {
-			background: fade(@contrast--accent, 20%);
-		}
-	
-		.style--dark & {
-			background: fade(@contrast--dark, 20%);
-		}
 	}
 }
 
@@ -1932,6 +1932,18 @@ select {
 	background-position: right 0.5em center;
 	background-size: 1.2em;
 	text-overflow: ellipsis;
+
+	.style--accent & {
+		background-image: url("data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI0IDI0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNCAyNCI+Cgk8cG9seWxpbmUgc3Ryb2tlPSIjNzY3ODgwIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjMiIHBvaW50cz0iMjAuMSw4LjYgMTIsMTYuNyAzLjksOC42IiAvPgo8L3N2Zz4=");
+	}
+
+	.style--accent & {
+		background-image: url("data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI0IDI0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNCAyNCI+Cgk8cG9seWxpbmUgc3Ryb2tlPSIjZmZmIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjMiIHBvaW50cz0iMjAuMSw4LjYgMTIsMTYuNyAzLjksOC42IiAvPgo8L3N2Zz4=");
+	}
+
+	.style--dark & {
+		background-image: url("data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI0IDI0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNCAyNCI+Cgk8cG9seWxpbmUgc3Ryb2tlPSIjZmZmIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjMiIHBvaW50cz0iMjAuMSw4LjYgMTIsMTYuNyAzLjksOC42IiAvPgo8L3N2Zz4=");
+	}
 
 	&::-ms-expand {
 		display: none;
@@ -2161,7 +2173,7 @@ form.blog-search-form .form-group {
 		}
 	
 		.widget.profile & {
-			background-color: fade(@contrast--dark, 10%);
+			background-color: fade(@contrast--dark, 20%);
 		
 			@media @mobile {
 				margin-bottom: 20px;
@@ -2171,17 +2183,13 @@ form.blog-search-form .form-group {
 	}
 	
 	button {
-		width: 30%;
+		min-width: 30%;
 	
 		@media @tablet {
-			width: 40%;
+			min-width: 40%;
 		}
 	
 		@media @mobile {
-			width: 100%;
-		}
-
-		.responsivecolumns & {
 			width: 100%;
 		}
 	}
@@ -2297,7 +2305,7 @@ input:focus {
 .widget.twitter {
 	ul {
 		padding: 20px 20px 0px 20px;
-		background-color: fade(@color-swatch2, 10%);
+		background-color: fade(@color-swatch2, 20%);
 		border-radius: 3px;
 
 		li {
@@ -2792,7 +2800,7 @@ footer.bk-footer {
 .widget.ecomproductslist .ecom-productslist-image-wrap,
 .widget.ecomfeaturedproducts .ecom-featuredproducts-image-wrap,
 .widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product .ecom-featuredproducts-image-wrap {
-	background-color: fade(@color-swatch2, 10%);
+	background-color: fade(@color-swatch2, 20%);
 	background-position: center;
 	margin-bottom: 20px;
 }
@@ -2805,35 +2813,37 @@ footer.bk-footer {
 }
 
 .widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product .ecom-featuredproducts-image-wrap {
-	background-color: fade(@color-swatch2, 10%);
+	background-color: fade(@color-swatch2, 20%);
 	background-position: center;
 	margin-bottom: 20px;
 }
 
-.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap,
 .widget.ecomproductslist .ecom-productslist-product,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap,
 .ecom-product {
 	a:hover {
 		text-decoration: none;
 	}
+}
 
-	h2.ecom-productslist-title {
-		font-size: @font-swatch3-font-size;
-		border-bottom: 1px solid @color-swatch2;
-		padding-bottom: 12px;
-		margin-bottom: 20px;
-	
-		.style--light & {
-			border-color: @color-swatch2;
-		}
-	
-		.style--accent & {
-			border-color: darken(@color--accent, 15%);
-		}
-	
-		.style--dark & {
-			border-color: lighten(@color--dark, 15%);
-		}
+.widget.ecomproductslist .ecom-productslist-title,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-title,
+.ecom-product-title {
+	font-size: @font-swatch3-font-size;
+	border-bottom: 1px solid @color-swatch2;
+	padding-bottom: 12px;
+	margin-bottom: 20px;
+
+	.style--light & {
+		border-color: @color-swatch2;
+	}
+
+	.style--accent & {
+		border-color: darken(@color--accent, 15%);
+	}
+
+	.style--dark & {
+		border-color: lighten(@color--dark, 15%);
 	}
 }
 
@@ -2914,7 +2924,7 @@ footer.bk-footer {
 		background-color:@color-swatch3;
 	
 		&:hover {
-			background-color: lighten(@color-swatch3,10%);
+			background-color: lighten(@color-swatch3, 20%);
 		}
 	}
 	
@@ -2926,7 +2936,7 @@ footer.bk-footer {
 		background-color: @color-swatch3;
 	
 		&:hover {
-			background-color: lighten(@color-swatch3,10%);
+			background-color: lighten(@color-swatch3, 20%);
 		}
 	}
 }
@@ -2943,7 +2953,7 @@ footer.bk-footer {
 
 .widget.ecombasket {
 	.ecombasket-pull {
-		color: darken(@font-swatch7-color, 10%);
+		color: darken(@font-swatch7-color, 20%);
 		background-color: fade(@color-swatch3, 80%);
 	
 		&:hover {
@@ -2960,7 +2970,7 @@ footer.bk-footer {
 		font-family: @font-swatch7-font-family;
 		font-size: bkscale(@font-swatch7-font-size,0.9);
 		font-weight:@font-swatch7-font-weight;
-		color: darken(@font-swatch7-color, 10%);
+		color: darken(@font-swatch7-color, 20%);
 		background-color: fade(@color-swatch3, 80%);
 		border: 0;
 		text-decoration: none;
@@ -3009,11 +3019,11 @@ footer.bk-footer {
 		@media @mobile {
 			padding: 0px;
 			margin: 0px 0px 30px 0px;
-			border-top: 1px solid darken(@font-swatch5-color, 10%);
+			border-top: 1px solid darken(@font-swatch5-color, 20%);
 		}
 
 		th {
-			border-bottom: 1px solid darken(@font-swatch5-color, 10%);
+			border-bottom: 1px solid darken(@font-swatch5-color, 20%);
 		}
 
 		td {
@@ -3065,7 +3075,7 @@ footer.bk-footer {
 					padding: 0;
 					box-shadow: none;
 					border: 0;
-					color: darken(@font-swatch7-color, 10%);
+					color: darken(@font-swatch7-color, 20%);
 					background-color: fade(@color-swatch3, 80%);
 					margin-top: 3px;
 
@@ -3076,7 +3086,7 @@ footer.bk-footer {
 			}
 
 			.basket-summary-amount {
-				color: darken(@color-swatch4, 10%);
+				color: darken(@color-swatch4, 20%);
 			}
 		}
 	
@@ -3084,11 +3094,11 @@ footer.bk-footer {
 			border-bottom: none;
 			
 			.basket-summary-subtotal {
-				color: darken(@color-swatch4, 10%);
+				color: darken(@color-swatch4, 20%);
 				display: block;
 				font-size: bkscale(@font-swatch5-font-size, 1.05);
 				margin-top: 25px;
-				border: 2px solid darken(@color-swatch4, 10%);
+				border: 2px solid darken(@color-swatch4, 20%);
 				padding: 20px;
 				font-weight: 700;
 			}
