@@ -1881,6 +1881,18 @@ textarea {
 	font-size: @font-swatch5-font-size;
 	color: @font-swatch5-color;
 
+	.style--accent & {
+		color: @font-swatch5-color;
+	}
+
+	.style--accent & {
+		color: @contrast--accent;
+	}
+
+	.style--dark & {
+		color: @contrast--dark;
+	}
+
 	&:focus {
 		outline: none;
 	}
@@ -2081,7 +2093,7 @@ select {
 			}
 
 			.style--dark & {
-				background-color: @color--accent;
+				background-color: @color--dark;
 				border: 1px solid @color--accent;
 			}
 		}
@@ -2105,7 +2117,7 @@ select {
 			}
 
 			.style--dark & {
-				box-shadow: -6px -6px 0 0 inset @color--accent;
+				box-shadow: -6px -6px 0 0 inset @color--dark;
 			}
 		}
 	}
