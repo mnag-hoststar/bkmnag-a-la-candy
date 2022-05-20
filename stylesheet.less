@@ -1418,6 +1418,7 @@ header.bk-header {
 							border: 0;
 							margin: 15px 0 0;
 							padding: 10px 0;
+							min-width: auto;
 							max-width: none;
 						}
 				
@@ -1801,15 +1802,14 @@ form.blog-search-form .form-group button,
 		display: inline-block;
 		
 		a {
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			display: inline-block;
 			background-image: none;
 			margin: 0 5px 10px;
 			padding: 0;
 			width: 45px;
 			height: 45px;
 			min-height: 45px;
+			line-height: 45px;
 			border-radius: 50%;
 			text-indent: 0;
 			font-size: 0;
@@ -1888,7 +1888,7 @@ textarea {
 
 textarea {
 	resize: none;
-	height: 100px;
+	min-height: 100px;
 }
 
 // Select Wrap
