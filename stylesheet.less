@@ -216,6 +216,10 @@ blockquote:before {
 	}
 }
 
+a, p, span, small, pre, code, table, th, td {
+    word-break: break-word;
+}
+
 // Preformatted and Code Text
 
 pre, code {
@@ -1710,6 +1714,7 @@ form.blog-search-form .form-group button,
 	-moz-transition: background-color 0.15s ease-in-out;
 	-o-transition: background-color 0.15s ease-in-out;
 	transition: background-color 0.15s ease-in-out;
+	word-break: break-word;
 
 	.style--light & {
 		background-color: fade(@color-swatch3, 80%);
