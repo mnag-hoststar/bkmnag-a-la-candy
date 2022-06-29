@@ -1038,7 +1038,7 @@ header.bk-header {
 			-moz-box-sizing: border-box;
 			box-sizing: border-box;
 			background-color: fade(@color-swatch7, 5%);
-			padding: 12em 2em;
+			padding: 16em 2em 6em;
 
 			@media @tablet {
 				padding: 200px 1em 70px;
@@ -1695,7 +1695,8 @@ button.button,
 .userregistration fieldset .userregistrationbtn,
 .widget.yelpreview .review-body .review-link a,
 form.blog-search-form .form-group button,
-.blog-post-more-link a {
+.blog-post-more-link a,
+.productlist-clear-search {
 	display: inline-block;
 	margin: 0.5em 0;
 	padding: 11px 20px;
@@ -1798,6 +1799,14 @@ form.blog-search-form .form-group button,
 	.responsivecolumns & {
 		display: block;
 		margin: 1em 0;
+	}
+}
+
+.productlist-clear-search {
+	margin: 10px 10px 60px;
+
+	@media @mobile {
+		width: calc(100% - 20px);
 	}
 }
 
