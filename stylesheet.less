@@ -2713,6 +2713,8 @@ footer.bk-footer {
 
 .widget.ecomproductslist .ecom-productslist-products,
 .widget.ecomfeaturedproducts .ecom-featuredproducts-wrap {
+	display: flex;
+	flex-wrap: wrap;
 	margin: 0 -10px;
 	max-width: none;
 	overflow: hidden;
@@ -2728,13 +2730,14 @@ footer.bk-footer {
 	// Filter
 	
 	.productlist-filter {
-		margin: 0 auto;
-		max-width: 800px;
+		width: 100%;
 
 		.productlist-display-form {
 			display: flex;
 			flex-wrap: wrap;
-			margin: 0 5px;
+			margin: 0 auto;
+			padding: 0 5px;
+			max-width: 800px;
 
 			.form-group {
 				display: block;
@@ -2801,6 +2804,8 @@ footer.bk-footer {
 		}
 
 		.productlist-item-count {
+			margin: 0 auto;
+			max-width: 800px;
 			padding: 10px;
 
 			@media @mobile {
